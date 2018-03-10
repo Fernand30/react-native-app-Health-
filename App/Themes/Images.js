@@ -1,0 +1,37 @@
+// leave off @2x/@3x
+const images = {
+  Alert: require('../Images/Alert.png'),
+  BackArrow: require('../Images/BackArrow.png'),
+  Contacts: require('../Images/Contacts.png'),
+  ddff: require('../Images/ddff.png'),
+  GlyphsPhoneContacts: require('../Images/GlyphsPhoneContacts.png'),
+  Group4: require('../Images/Group4.png'),
+  Group6: require('../Images/Group6.png'),
+  Group16: require('../Images/Group16.png'),
+  Group27: require('../Images/Group27.png'),
+  Group31: require('../Images/Group31.png'),
+  Group34: require('../Images/Group34.png'),
+  Group47: require('../Images/Group47.png'),
+  Group56: require('../Images/Group56.png'),
+  Group122: require('../Images/Group122.png'),
+  Group195: require('../Images/Group195.png'),
+  Indicators: require('../Images/Indicators.png'),
+  Loupe: require('../Images/Loupe.png'),
+  Path1: require('../Images/Path1.png'),
+  Path474: require('../Images/Path474.png'),
+  Path476: require('../Images/Path476.png'),
+  Path483: require('../Images/Path483.png'),
+  Path486: require('../Images/Path486.png'),
+  Path487: require('../Images/Path487.png'),
+  Path503: require('../Images/Path503.png'),
+  Path506: require('../Images/Path507.png'),
+  Path507: require('../Images/Path507.png'),
+  Path510: require('../Images/Path510.png'),
+  Path511: require('../Images/Path511.png'),
+  Rectangle1: require('../Images/Rectangle1.png'),
+  Subtraction51: require('../Images/Subtraction51.png'),
+  Token: require('../Images/Token.png'),
+  Arrow: require('../Images/Arrow.png')
+}
+
+export default images
