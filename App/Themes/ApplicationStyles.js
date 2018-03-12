@@ -49,10 +49,30 @@ const ApplicationStyles = {
       marginHorizontal: Metrics.smallMargin
     },
     titleText: {
-      ...Fonts.style.h2,
-      fontSize: 14,
-      color: Colors.text
-    }
+      fontSize: Metrics.unitFontSize*20,
+      fontWeight: '600',
+      alignSelf: 'center',
+      backgroundColor: 'transparent',
+    },
+    cancelText: {
+      color: Colors.navy,
+      fontSize: Metrics.unitFontSize * 20,
+      fontWeight: '500',
+      backgroundColor: 'transparent',
+    },
+    emailText:{
+      fontSize: Metrics.unitFontSize*12,
+      width: Metrics.unitMargin*30,
+      backgroundColor: 'transparent',
+    },
+    whiteContent:{
+      flex: 1,
+      backgroundColor: 'white'
+    },
+    yellowContent:{
+      flex: 1,
+      backgroundColor: Colors.background
+    },
   },
   darkLabelContainer: {
     padding: Metrics.smallMargin,

@@ -1,16 +1,19 @@
 import React, { Component } from 'react'
-import { View, Image, Text, TouchableOpacity, ScrollView } from 'react-native'
+import { View, Image, Text, SafeAreaView, ScrollView, TouchableOpacity } from 'react-native'
 import { connect } from 'react-redux'
 import { NavigationActions } from "react-navigation";
-import { Images, Colors, Metrics } from '../../Themes'
+import { Images, Colors, Metrics, ApplicationStyles } from '../../Themes'
 import { Container, Content, Form, Item, Input, Spinner, Toast } from 'native-base';
 import AuthActions from '../../Redux/AuthRedux'
 import FullButton from '../../Components/FullButton'
+import InputText from '../../Components/InputText'
 import Modal from "react-native-modal";
 
 import styles from './Styles/HomeListScreenStyle'
 
 class LoginScreen extends Component {
+  static navigationOptions = { header: null };
+  static navigationOptions = { header: null };
 
   constructor (props) {
     super(props)
@@ -19,20 +22,12 @@ class LoginScreen extends Component {
     })
   }
 
-  Resetpassword = () => {
-    const ResetPasswordScreen = NavigationActions.navigate({
-      routeName: "ResetPasswordScreen",
+  goViewProgram = () => {
+    const ViewProgramStack = NavigationActions.navigate({
+      routeName: "ViewProgramStack",
       params: {}
     });
-    this.props.navigation.dispatch(ResetPasswordScreen);
-  }
-
-  CreateAccount = () => {
-    const CreateAccountScreen = NavigationActions.navigate({
-      routeName: "CreateAccountScreen",
-      params: {}
-    });
-    this.props.navigation.dispatch(CreateAccountScreen);
+    this.props.navigation.dispatch(ViewProgramStack);
   }
 
   goCancel(){
@@ -47,6 +42,7 @@ class LoginScreen extends Component {
 
   render () {
     return (
+      <SafeAreaView style={ApplicationStyles.screen.yellowContent}>
       <Container>
         <View style={styles.contentStyle}>
           <View style={styles.headerView}>
@@ -54,7 +50,7 @@ class LoginScreen extends Component {
               
             </View>
             <View style={styles.headerCenterView}>
-              <Image source={Images.Path1} style={styles.Path1}/>
+              <Image source={Images.muscle} style={styles.muscle}/>
               <Text style={styles.titleText}>Health App</Text>
             </View>
             <View style={styles.headerRightView}>
@@ -64,24 +60,19 @@ class LoginScreen extends Component {
           </View>
           <View style={styles.searchView}>
             <View style={styles.inputView}>
-              <Image source={Images.Subtraction51} style={styles.search}/>
-              <Input placeholder={'Search for programs or coaches'}
+              <Image source={Images.search} style={styles.search}/>
+              <InputText placeholder={'Search for programs or coaches'}
                      style={styles.inputStyle}
-                     textAlign={'left'}
                      fontSize={Metrics.unitFontSize*13}
-                     placeholderTextColor={Colors.coal}    
-                     returnKeyType='done'                
-                     autoCapitalize='none'
-                     autoCorrect={false}                
-                     underlineColorAndroid='transparent'
-                     onSubmitEditing={() => this.handleLogin}
               />
             </View>
-            <Image source={Images.Path474} style={styles.backArrow}/>
+            <TouchableOpacity onPress={this.goViewProgram}>
+              <Image source={Images.menu} style={styles.backArrow}/>
+            </TouchableOpacity>
           </View>
       <ScrollView>
           <TouchableOpacity onPress={this.goModal.bind(this)}>
-            <Image source={Images.Group31} style={styles.group31}/>
+            <Image source={Images.renderImage1} style={styles.renderImage1}/>
           </TouchableOpacity>
           <View style={styles.rowView}>
             <View style={styles.smalRowView}>
@@ -90,67 +81,67 @@ class LoginScreen extends Component {
             </View>
             <View style={styles.barView}/>
             <View style={styles.smalRowView}>
-              <Image source={Images.Path476} style={styles.Path476}/>
+              <Image source={Images.star} style={styles.star}/>
               <Text style={styles.text}>featured Programs</Text>
             </View>
             <View style={styles.barView}/>
             <View style={styles.smalRowView}>
-              <Image source={Images.Group34} style={styles.Group34}/>
+              <Image source={Images.newprogram} style={styles.newprogram}/>
               <Text style={styles.text}>new Programs</Text>
             </View>
           </View>
           <View>
-            <Image source={Images.Group56} style={styles.group31}/>
+            <Image source={Images.renderImage2} style={styles.renderImage1}/>
             <View style={styles.absoluteleft}>
-              <Image source={Images.Path511} style={styles.Path511}/>
+              <Image source={Images.account} style={styles.account}/>
               <Text style={{fontSize: Metrics.unitFontSize*14}}>10</Text>
             </View>
             <View style={styles.absoluteright}>
-              <Image source={Images.Path510} style={styles.Path510}/>
+              <Image source={Images.heart} style={styles.heart}/>
             </View>
           </View> 
           <Text style={styles.commonText}>Julian Anderson's 30 Day Ultimate Spartan Shredder For{'\n'}Sports and Recreation</Text>
           <View style={styles.rowView}>
             <View style={styles.yellowRowView}>
-              <Image source={Images.Path503} style={styles.Path503}/>
+              <Image source={Images.buildMuscle} style={styles.buildMuscle}/>
               <Text style={styles.text}>Build{'\n'}Muscie</Text>
             </View>
             
             <View style={styles.yellowRowView}>
-              <Image source={Images.Path486} style={styles.Path486}/>
+              <Image source={Images.increaseFocus} style={styles.increaseFocus}/>
               <Text style={styles.text}>Increase{'\n'}Focus</Text>
             </View>
             
             <View style={styles.yellowRowView}>
-              <Image source={Images.Path487} style={styles.Path487}/>
+              <Image source={Images.Boast} style={styles.Boast}/>
               <Text style={styles.text}>Boast{'\n'}TestOsterOne</Text>
             </View>
           </View>
           <Text style={styles.smallText}>Julian Anderson's 30 Day Ultimate Spartan Shredder For Sports andsdf sdffas{'\n'}Recreation is and amazing program that can get you the results that sdfs dfsdf</Text>
           <View>
-            <Image source={Images.Group56} style={styles.group31}/>
+            <Image source={Images.renderImage2} style={styles.renderImage1}/>
             <View style={styles.absoluteleft}>
-              <Image source={Images.Path511} style={styles.Path511}/>
+              <Image source={Images.account} style={styles.account}/>
               <Text style={{fontSize: Metrics.unitFontSize*14}}>10</Text>
             </View>
             <View style={styles.absoluteright}>
-              <Image source={Images.Path510} style={styles.Path510}/>
+              <Image source={Images.heart} style={styles.heart}/>
             </View>
           </View> 
           <Text style={styles.commonText}>Julian Anderson's 30 Day Ultimate Spartan Shredder For{'\n'}Sports and Recreation</Text>
           <View style={styles.rowView}>
             <View style={styles.yellowRowView}>
-              <Image source={Images.Path503} style={styles.Path503}/>
+              <Image source={Images.buildMuscle} style={styles.buildMuscle}/>
               <Text style={styles.text}>Build{'\n'}Muscie</Text>
             </View>
             
             <View style={styles.yellowRowView}>
-              <Image source={Images.Path486} style={styles.Path486}/>
+              <Image source={Images.increaseFocus} style={styles.increaseFocus}/>
               <Text style={styles.text}>Increase{'\n'}Focus</Text>
             </View>
             
             <View style={styles.yellowRowView}>
-              <Image source={Images.Path487} style={styles.Path487}/>
+              <Image source={Images.Boast} style={styles.Boast}/>
               <Text style={styles.text}>Boast{'\n'}TestOsterOne</Text>
             </View>
           </View>
@@ -173,6 +164,7 @@ class LoginScreen extends Component {
           </View>
         </Modal>
       </Container>
+    </SafeAreaView>  
     )
   }
 }

@@ -21,15 +21,16 @@ export default StyleSheet.create({
   titleView: {
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'space-between'
+    justifyContent: 'center'
   },
-  Path1: {
+  muscle: {
     width:Metrics.unitMargin*24,
     height:Metrics.unitMargin*24/90*67,
   },
   titleText:{
     fontSize: Metrics.unitFontSize*57,
-    fontWeight: '800'
+    fontWeight: '800',
+    marginLeft: Metrics.unitMargin*3
   },
   fullbutton: {
     backgroundColor: Colors.snow,

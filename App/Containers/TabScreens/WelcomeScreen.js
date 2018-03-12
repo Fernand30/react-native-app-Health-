@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
-import { View, Image, Text } from 'react-native'
+import { View, Image, Text, SafeAreaView, TouchableOpacity } from 'react-native'
 import { connect } from 'react-redux'
 import { NavigationActions } from "react-navigation";
-import { Images, Colors, Metrics } from '../../Themes'
+import { Images, Colors, Metrics, ApplicationStyles } from '../../Themes'
 import { Container, Content, Form, Item, Input, Spinner, Toast } from 'native-base';
 import AuthActions from '../../Redux/AuthRedux'
 import FullButton from '../../Components/FullButton'
+import InputText from '../../Components/InputText'
 // Add Actions - replace 'Your' with whatever your reducer is called :)
 // import YourActions from '../Redux/YourRedux'
 
@@ -21,7 +22,7 @@ type WelcomeScreenProps = {
 }
 
 class WelcomeScreen extends Component {
-
+  static navigationOptions = { header: null };
   props: WelcomeScreenProps
 
   state: {
@@ -47,6 +48,11 @@ class WelcomeScreen extends Component {
     this.isAttempting = false
 
   }
+
+  // static navigationOptions = ({navigation}) => ({
+  //   header: false,
+  //   headerStyle: {visible: false}
+  // })
 
   componentWillReceiveProps(nextProps) {
     this.forceUpdate();
@@ -96,85 +102,87 @@ class WelcomeScreen extends Component {
 
   render () {
     return (
+      <SafeAreaView style={ApplicationStyles.screen.yellowContent}> 
       <Container>
         <View style={styles.contentStyle}>
-          <View style={styles.headerView}>
-            <Image source={Images.Path1} style={styles.Path1}/>
-            <Text style={styles.titleText}>Health App</Text>
-          </View>
-          <Text style={styles.welcome}>Welcome to Fry Egg!</Text>
-          <Text style={styles.join}>Join or sign in to get started</Text>
-          <FullButton
-            text='Create an account'
-            style={{
-              backgroundColor: Colors.pink,
-              alignItems: 'center',
-              borderRadius: 3,
-              height: Metrics.unitMargin * 10,
-              marginTop: Metrics.unitMargin*10,
-              marginHorizontal: Metrics.unitMargin*5
-            }}
-            textStyle={{
-              color: Colors.white,
-              fontSize: Metrics.unitFontSize * 20,
-            }}
-            onPress={()=>{this.CreateAccount()}}
-          />
-          <FullButton
-            text='Continue with Facebook'
-            style={{
-              backgroundColor: Colors.facebook,
-              alignItems: 'center',
-              borderRadius: 3,
-              height: Metrics.unitMargin * 10,
-              marginTop: Metrics.unitMargin*2,
-              marginHorizontal: Metrics.unitMargin*5
-            }}
-            textStyle={{
-              color: Colors.white,
-              fontSize: Metrics.unitFontSize * 20,
-            }}
-            onPress={()=>{this.goTabNavigation()}}
-          />
-          <View style={styles.orrow}>
-            <View style={styles.lineView}/>
-            <Text style={styles.ortext}>OR</Text>
-            <View style={styles.lineView}/>
-          </View>
-          <FullButton
-            text='Log in'
-            style={{
-              backgroundColor: Colors.snow,
-              alignItems: 'center',
-              borderRadius: 3,
-              height: Metrics.unitMargin * 10,
-              marginTop: Metrics.unitMargin*5,
-              marginHorizontal: Metrics.unitMargin*5,
-              borderWidth: 0.5,
-              borderColor: Colors.navy
-            }}
-            textStyle={{
-              color: Colors.navy,
-              fontSize: Metrics.unitFontSize * 20
-            }}
-            onPress={this.handleLogin}
-          />
-          <View style={styles.policyView}>
-            <View style={styles.circleView}>
-             <Text style={styles.itext}>i</Text>
-            </View>
-            <Text style={styles.policyText}>Terms of Service & Privacy Policy</Text>
-            <Image source={Images.Arrow} style={styles.arrow}/>
-          </View>
-          <View style={styles.policyView1}>
-            <View style={styles.circleView}>
-             <Text style={styles.itext}>i</Text>
-            </View>
-            <Text style={styles.policyText}>Contact Suppoert</Text>
-            <Image source={Images.Arrow} style={styles.arrow}/>
-          </View>
+           <View style={styles.headerView}>
+                      <Image source={Images.muscle} style={styles.muscle}/>
+                      <Text style={styles.titleText}>Health App</Text>
+                    </View>
+                    <Text style={styles.welcome}>Welcome to Fry Egg!</Text>
+                    <Text style={styles.join}>Join or sign in to get started</Text>
+                    <FullButton
+                      text='Create an account'
+                      style={{
+                        backgroundColor: Colors.pink,
+                        alignItems: 'center',
+                        borderRadius: 3,
+                        height: Metrics.unitMargin * 10,
+                        marginTop: Metrics.unitMargin*10,
+                        marginHorizontal: Metrics.unitMargin*5
+                      }}
+                      textStyle={{
+                        color: Colors.white,
+                        fontSize: Metrics.unitFontSize * 20,
+                      }}
+                      onPress={()=>{this.CreateAccount()}}
+                    />
+                    <FullButton
+                      text='Continue with Facebook'
+                      style={{
+                        backgroundColor: Colors.facebook,
+                        alignItems: 'center',
+                        borderRadius: 3,
+                        height: Metrics.unitMargin * 10,
+                        marginTop: Metrics.unitMargin*2,
+                        marginHorizontal: Metrics.unitMargin*5
+                      }}
+                      textStyle={{
+                        color: Colors.white,
+                        fontSize: Metrics.unitFontSize * 20,
+                      }}
+                      onPress={()=>{this.goTabNavigation()}}
+                    />
+                    <View style={styles.orrow}>
+                      <View style={styles.lineView}/>
+                      <Text style={styles.ortext}>OR</Text>
+                      <View style={styles.lineView}/>
+                    </View>
+                    <FullButton
+                      text='Log in'
+                      style={{
+                        backgroundColor: Colors.snow,
+                        alignItems: 'center',
+                        borderRadius: 3,
+                        height: Metrics.unitMargin * 10,
+                        marginTop: Metrics.unitMargin*5,
+                        marginHorizontal: Metrics.unitMargin*5,
+                        borderWidth: 0.5,
+                        borderColor: Colors.navy
+                      }}
+                      textStyle={{
+                        color: Colors.navy,
+                        fontSize: Metrics.unitFontSize * 20
+                      }}
+                      onPress={this.handleLogin}
+                    />
+                    <View style={styles.policyView}>
+                      <View style={styles.circleView}>
+                       <Text style={styles.itext}>i</Text>
+                      </View>
+                      <Text style={styles.policyText}>Terms of Service & Privacy Policy</Text>
+                      <Image source={Images.Arrow} style={styles.arrow}/>
+                    </View>
+                    <View style={styles.policyView1}>
+                      <View style={styles.circleView}>
+                       <Text style={styles.itext}>i</Text>
+                      </View>
+                      <Text style={styles.policyText}>Contact Suppoert</Text>
+                      <Image source={Images.Arrow} style={styles.arrow}/>
+                    </View>
         </View>
       </Container>
+      </SafeAreaView> 
     )
   }
 }

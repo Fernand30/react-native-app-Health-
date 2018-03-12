@@ -6,7 +6,7 @@ import HomeListScreen from "./TabScreens/HomeListScreen";
 
 const navigator = StackNavigator({
   HomeListScreen: {
-    screen: HomeListScreen
+    screen: HomeListScreen,
   }
 },{
   headerMode: 'none'

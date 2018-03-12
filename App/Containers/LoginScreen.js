@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
-import { View, Image, Text } from 'react-native'
+import { View, Image, Text, SafeAreaView } from 'react-native'
 import { connect } from 'react-redux'
 import { NavigationActions } from "react-navigation";
-import { Images, Colors, Metrics } from '../Themes'
-import { Container, Content, Form, Item, Input, Spinner, Toast } from 'native-base';
+import { Images, Colors, Metrics, ApplicationStyles } from '../Themes'
+import { Container, Content, Form, Item, Spinner, Toast } from 'native-base';
 import AuthActions from '../Redux/AuthRedux'
 import FullButton from '../Components/FullButton'
+import InputText from '../Components/InputText'
 
 import styles from './Styles/LoginScreenStyle'
 
@@ -29,6 +30,7 @@ class LoginScreen extends Component {
 
   render () {
     return (
+    <SafeAreaView style={ApplicationStyles.screen.whiteContent}> 
       <Container>
         <View style={styles.contentStyle}>
           <View style={styles.headerView}>
@@ -39,52 +41,34 @@ class LoginScreen extends Component {
                   backgroundColor: 'transparent',
                   alignItems: 'center',     
                 }}
-                textStyle={{
-                  color: Colors.navy,
-                  fontSize: Metrics.unitFontSize * 22,
-                  fontWeight: '500'
-                }}
+                textStyle={ApplicationStyles.screen.cancelText}
                 onPress={this.goCancel.bind(this)}
               />
             </View>
             <View style={styles.headerCenterView}>
-              <Text style={styles.titleText}>Log in</Text>
+              <Text style={ApplicationStyles.screen.titleText}>Log in</Text>
             </View>
             <View style={styles.headerRightView}>
 
             </View>
             
           </View>
-
+          <View style={styles.fixView}/>
           <Form>
             <Item regular style={styles.inputContainer}>
-              <Text style={styles.emailText}>ENAIL/USERNAME</Text>
-              <Input placeholder={'Enter Email'}
+              <Text style={ApplicationStyles.screen.emailText}>ENAIL/USERNAME</Text>
+              <InputText placeholder={'Enter Email'}
                      style={styles.inputStyle}
-                     textAlign={'left'}
                      fontSize={Metrics.unitFontSize*15}
-                     placeholderTextColor={Colors.coal}    
-                     returnKeyType='done'                
-                     autoCapitalize='none'
-                     autoCorrect={false}
-                     autoFocus={true}                    
-                     underlineColorAndroid='transparent'
-                     onSubmitEditing={() => this.handleLogin}
+                     autoFocus={true}
               />
             </Item>
             <Item regular style={styles.inputContainer}>
-              <Text style={styles.emailText}>PASSWORD</Text>
-              <Input placeholder={'Enter your password'}
+              <Text style={ApplicationStyles.screen.emailText}>PASSWORD</Text>
+              <InputText placeholder={'Enter your password'}
                      style={styles.inputStyle}
-                     textAlign={'left'}
                      fontSize={Metrics.unitFontSize*15}
-                     placeholderTextColor={Colors.coal}                     
-                     returnKeyType='done'                
-                     autoCapitalize='none'
-                     autoCorrect={false} 
-                     secureTextEntry={true}                   
-                     underlineColorAndroid='transparent'
-                     onSubmitEditing={() => this.handleLogin}
+                     secureTextEntry={true}
               />
             </Item>
           </Form>
@@ -120,6 +104,7 @@ class LoginScreen extends Component {
           
         </View>
       </Container>
+     </SafeAreaView>  
     )
   }
 }

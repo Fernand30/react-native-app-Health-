@@ -36,23 +36,23 @@ export default StyleSheet.create({
     width: Metrics.unitMargin*3,
     height: Metrics.unitMargin*6 
   },
-  Path503:{
+  buildMuscle:{
     width: Metrics.unitMargin*4,
     height: Metrics.unitMargin*4/15*18
   },
-  Path486:{
+  increaseFocus:{
     width: Metrics.unitMargin*4,
     height: Metrics.unitMargin*4/17*22
   },
-  Path487:{
+  Boast:{
     width: Metrics.unitMargin*4,
     height: Metrics.unitMargin*4 
   },
-  Path476:{
+  star:{
     width: Metrics.unitMargin*4,
     height: Metrics.unitMargin*4
   },
-  Group34:{
+  newprogram:{
     width: Metrics.unitMargin*5,
     height: Metrics.unitMargin*5/29*17
   },
@@ -180,7 +180,7 @@ export default StyleSheet.create({
     fontSize: Metrics.unitFontSize*15,
     width: Metrics.unitMargin*30
   },
-  group31:{
+  renderImage1:{
     width: Metrics.screenWidth,
     height: Metrics.screenWidth/375*184
   },
@@ -196,7 +196,7 @@ export default StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     backgroundColor: 'white',
-    width: Metrics.unitFontSize*400,
+    width: Metrics.unitFontSize*350,
     height: Metrics.unitMargin*7,
     paddingLeft: Metrics.unitMargin*3,
     borderRadius: 3
@@ -205,17 +205,16 @@ export default StyleSheet.create({
     marginLeft: Metrics.unitMargin*3
   },
   inputStyle: {
-    height: Metrics.unitMargin*15,
+    height: Metrics.unitMargin*5,
   },
   headerView: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
     backgroundColor: Colors.background,
-    height: Metrics.unitMargin*18,
-    paddingTop: Metrics.unitMargin*5,
+    height: Metrics.unitMargin*13,
   },
-  Path1: {
+  muscle: {
     width:Metrics.unitMargin*12,
     height:Metrics.unitMargin*12/90*67,
   },

@@ -2,10 +2,11 @@ import { StyleSheet } from 'react-native'
 import { ApplicationStyles, Metrics, Colors, Fonts } from '../../../Themes/'
 
 export default StyleSheet.create({
-  ...ApplicationStyles.screen,
   contentStyle: {
     flex: 1,
-    backgroundColor: Colors.background1
+    backgroundColor: 'white',
+    shadowOpacity: 0,
+    elevation: 0,
   },
   welcome:{
     fontSize: Metrics.unitFontSize*25,
@@ -17,11 +18,9 @@ export default StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: Colors.background,
-    height: Metrics.unitMargin*18,
-    paddingTop: Metrics.unitMargin*5,
-    shadowOffset:{  width: 0,  height: 1,  },
-    shadowColor: 'black',
-    shadowOpacity: 0.2,
+    height: Metrics.unitMargin*13,
+    borderColor: Colors.bar,
+    borderBottomWidth: 1
   },
   join:{
     fontSize: Metrics.unitFontSize*20,
@@ -93,7 +92,7 @@ export default StyleSheet.create({
     backgroundColor: Colors.navy,
     width: Metrics.unitMargin*35
   },
-  Path1: {
+  muscle: {
     width:Metrics.unitMargin*12,
     height:Metrics.unitMargin*12/90*67,
   },

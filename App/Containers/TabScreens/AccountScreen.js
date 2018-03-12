@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
-import { View, Image, Text, TouchableOpacity } from 'react-native'
+import { View, Image, Text, TouchableOpacity, SafeAreaView } from 'react-native'
 import { connect } from 'react-redux'
 import { NavigationActions } from "react-navigation";
-import { Images, Colors, Metrics } from '../../Themes'
+import { Images, Colors, Metrics, ApplicationStyles } from '../../Themes'
 import { Container, Content, Form, Item, Input, Spinner, Toast } from 'native-base';
 import AuthActions from '../../Redux/AuthRedux'
 import FullButton from '../../Components/FullButton'
+import InputText from '../../Components/InputText'
 // Add Actions - replace 'Your' with whatever your reducer is called :)
 // import YourActions from '../Redux/YourRedux'
 
@@ -21,7 +22,7 @@ type WelcomeScreenProps = {
 }
 
 class WelcomeScreen extends Component {
-
+  static navigationOptions = { header: null };
   props: WelcomeScreenProps
 
   state: {
@@ -96,6 +97,7 @@ class WelcomeScreen extends Component {
 
   render () {
     return (
+      <SafeAreaView style={ApplicationStyles.screen.yellowContent}> 
       <Container>
         <View style={styles.contentStyle}>
           <View style={styles.headerView}>
@@ -107,11 +109,11 @@ class WelcomeScreen extends Component {
             </View>
             <View style={styles.headerRightView}>
               <TouchableOpacity style={styles.backArrowButton}>
-                <Image source={Images.Path474} style={styles.backArrow}/>
+                <Image source={Images.menu} style={styles.backArrow}/>
               </TouchableOpacity>
             </View>
           </View>
-          <Image source={Images.Group195} style={styles.account}/>
+          <Image source={Images.chaudt} style={styles.account}/>
           <Text style={styles.welcome}>@chaudt15</Text>
           <View style={styles.tokenView}>
             <Image source={Images.Token} style={styles.token}/>
@@ -190,6 +192,7 @@ class WelcomeScreen extends Component {
           </View>
         </View>
       </Container>
+      </SafeAreaView>
     )
   }
 }

@@ -37,20 +37,19 @@ export default StyleSheet.create({
     marginBottom: Metrics.unitMargin*15,
   },
   inputStyle: {
-    height: Metrics.unitMargin*15,
+    height: Metrics.unitMargin*13,
   },
   headerView: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
     backgroundColor: 'white',
-    height: Metrics.unitMargin*18,
-    paddingTop: Metrics.unitMargin*5,
-    shadowOffset:{  width: 0,  height: 1,  },
-    shadowColor: 'black',
-    shadowOpacity: 0.2,
+    height: Metrics.unitMargin*10,
+    alignItems: 'center',
+    borderBottomWidth: 1,
+    borderColor: Colors.bar
   },
-  Path1: {
+  muscle: {
     width:Metrics.unitMargin*24,
     height:Metrics.unitMargin*24/90*67,
   },

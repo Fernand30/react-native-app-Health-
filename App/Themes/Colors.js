@@ -27,7 +27,9 @@ const colors = {
   pink: '#e33855',
   background1: '#f7f7f7',
   bar: '#d0d0d0',
-  carousel: '#bab9b9'
+  carousel: '#bab9b9',
+  search: '#f5f5f5',
+  border: '#8b8b8b'
 }
 
 export default colors

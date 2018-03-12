@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, Image, Text } from 'react-native'
+import { View, Image, Text, SafeAreaView } from 'react-native'
 import { connect } from 'react-redux'
 import { NavigationActions } from "react-navigation";
 import { Images, Colors, Metrics } from '../Themes'
@@ -110,10 +110,11 @@ class WelcomeScreen extends Component {
 
   render () {
     return (
+     <SafeAreaView style={styles.contentStyle}> 
       <Container>
         <View style={styles.contentStyle}>
           <View style={styles.titleView}>
-            <Image source={Images.Path1} style={styles.Path1}/>
+            <Image source={Images.muscle} style={styles.muscle}/>
             <Text style={styles.titleText}>Health App</Text>
           </View>
 
@@ -205,7 +206,7 @@ class WelcomeScreen extends Component {
               alignItems: 'center',
               borderRadius: 3,
               height: Metrics.unitMargin * 10,
-              marginTop: Metrics.unitMargin*25
+              marginTop: Metrics.unitMargin*20
             }}
             textStyle={{
               color: Colors.navy,
@@ -216,6 +217,7 @@ class WelcomeScreen extends Component {
           />
         </View>
       </Container>
+     </SafeAreaView> 
     )
   }
 }

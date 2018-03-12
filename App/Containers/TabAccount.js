@@ -36,7 +36,16 @@ const navigator = StackNavigator({
     screen: AccountScreen
   }
 },{
-  headerMode: 'none'
+  navigationOptions: {
+      header: false,
+      headerStyle: {
+          shadowOpacity: 0,
+          shadowOffset: {
+            height: 0,
+          },
+          shadowRadius: 0,
+        }
+    }
 });
   
 const mapStateToProps = (state) => {

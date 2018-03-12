@@ -2,13 +2,13 @@ import { StyleSheet } from 'react-native'
 import { ApplicationStyles, Metrics, Colors, Fonts } from '../../Themes/'
 
 export default StyleSheet.create({
-  ...ApplicationStyles.screen,
+  
   contentStyle: {
     flex: 1,
   },
   tabbar:{
-    backgroundColor:'transparent',
-    height: Metrics.unitMargin*12
+    backgroundColor:'white',
+    height: Metrics.unitMargin*13
   },
   emailText:{
     fontSize: Metrics.unitFontSize*15,

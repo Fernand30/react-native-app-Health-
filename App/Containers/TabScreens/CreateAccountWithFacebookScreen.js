@@ -1,16 +1,17 @@
 import React, { Component } from 'react'
-import { View, Image, Text, TouchableOpacity } from 'react-native'
+import { View, Image, Text, SafeAreaView, TouchableOpacity } from 'react-native'
 import { connect } from 'react-redux'
 import { NavigationActions } from "react-navigation";
-import { Images, Colors, Metrics } from '../../Themes'
+import { Images, Colors, Metrics, ApplicationStyles } from '../../Themes'
 import { Container, Content, Form, Item, Input, Spinner, Toast } from 'native-base';
 import AuthActions from '../../Redux/AuthRedux'
 import FullButton from '../../Components/FullButton'
+import InputText from '../../Components/InputText'
 
 import styles from './Styles/CreateAccountWithFacebookScreenStyle'
 
 class LoginScreen extends Component {
-
+  static navigationOptions = { header: null };
   constructor (props) {
     super(props)
   }
@@ -29,6 +30,7 @@ class LoginScreen extends Component {
 
   render () {
     return (
+      <SafeAreaView style={ApplicationStyles.screen.yellowContent}> 
       <Container>
         <View style={styles.contentStyle}>
           <View style={styles.headerView}>
@@ -38,8 +40,8 @@ class LoginScreen extends Component {
               </TouchableOpacity>
             </View>
             <View style={styles.headerCenterView}>
-              <Image source={Images.Path1} style={styles.Path1}/>
-              <Text style={styles.titleText}>Health App</Text>
+              <Image source={Images.muscle} style={styles.muscle}/>
+              <Text style={ApplicationStyles.screen.titleText}>Health App</Text>
             </View>
             <View style={styles.headerRightView}>
 
@@ -49,32 +51,18 @@ class LoginScreen extends Component {
           
           <Form>
             <Item regular style={styles.inputContainer}>
-              <Text style={styles.emailText}>USERNAME</Text>
-              <Input placeholder={'Choose a username'}
+              <Text style={ApplicationStyles.screen.emailText}>USERNAME</Text>
+              <InputText placeholder={'Choose a username'}
                      style={styles.inputStyle}
-                     textAlign={'left'}
                      fontSize={Metrics.unitFontSize*15}
-                     placeholderTextColor={Colors.coal}    
-                     returnKeyType='done'                
-                     autoCapitalize='none'
-                     autoCorrect={false}                
-                     underlineColorAndroid='transparent'
-                     onSubmitEditing={() => this.handleLogin}
               />
             </Item>
             <Item regular style={styles.inputContainer1}>
-              <Text style={styles.emailText}>EMAIL</Text>
-              <Input placeholder={'Enter your email address'}
+              <Text style={ApplicationStyles.screen.emailText}>EMAIL</Text>
+              <InputText placeholder={'Enter your email address'}
                      style={styles.inputStyle}
-                     textAlign={'left'}
                      fontSize={Metrics.unitFontSize*15}
-                     placeholderTextColor={Colors.coal}                     
-                     returnKeyType='done'                
-                     autoCapitalize='none'
-                     autoCorrect={false} 
-                     secureTextEntry={true}                   
-                     underlineColorAndroid='transparent'
-                     onSubmitEditing={() => this.handleLogin}
+                     secureTextEntry={true}
               />
             </Item>
             
@@ -98,6 +86,7 @@ class LoginScreen extends Component {
           
         </View>
       </Container>
+      </SafeAreaView>
     )
   }
 }
