@@ -173,7 +173,7 @@ export default StyleSheet.create({
   heart:{
     width: Metrics.unitMargin*5,
     height: Metrics.unitMargin*5/33*29,
-    marginRight: Metrics.unitMargin
+    marginRight: Metrics.unitMargin*3
   },
   Boast:{
     width: Metrics.unitMargin*4,
@@ -202,7 +202,8 @@ export default StyleSheet.create({
   },
   text:{
     fontSize: Metrics.unitFontSize*13,
-    textAlign: 'center'
+    textAlign: 'center',
+    marginLeft: Metrics.unitMargin*2
   },
   michaeltext:{
     fontSize: Metrics.unitFontSize*14,
@@ -219,8 +220,9 @@ export default StyleSheet.create({
     color: 'red'
   },
   commonText:{
-    fontSize: Metrics.unitFontSize*15,
-    marginLeft: Metrics.unitMargin*3
+    fontSize: Metrics.unitFontSize*16,
+    marginLeft: Metrics.unitMargin*3,
+    textAlign: 'center'
   },
   eachView:{
     alignItems:'center',

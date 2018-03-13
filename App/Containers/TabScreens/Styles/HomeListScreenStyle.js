@@ -30,7 +30,8 @@ export default StyleSheet.create({
     flexDirection: 'row',
     marginHorizontal: Metrics.unitMargin*5,
     justifyContent: 'space-between',
-    alignItems:'center'
+    alignItems:'center',
+    paddingVertical: Metrics.unitMargin*1.5
   },
   ddff:{
     width: Metrics.unitMargin*3,
@@ -49,12 +50,12 @@ export default StyleSheet.create({
     height: Metrics.unitMargin*4 
   },
   star:{
-    width: Metrics.unitMargin*4,
-    height: Metrics.unitMargin*4
+    width: Metrics.unitMargin*5,
+    height: Metrics.unitMargin*5
   },
   newprogram:{
-    width: Metrics.unitMargin*5,
-    height: Metrics.unitMargin*5/29*17
+    width: Metrics.unitMargin*6,
+    height: Metrics.unitMargin*6/29*17
   },
   smalRowView:{
     flexDirection: 'row',
@@ -71,7 +72,8 @@ export default StyleSheet.create({
   },
   text:{
     fontSize: Metrics.unitFontSize*13,
-    textAlign: 'center'
+    textAlign: 'center',
+    marginLeft: Metrics.unitMargin*2
   },
   redtext:{
     fontSize: Metrics.unitFontSize*13,
@@ -80,11 +82,14 @@ export default StyleSheet.create({
   },
   commonText:{
     fontSize: Metrics.unitFontSize*17,
-    marginLeft: Metrics.unitMargin*3
+    marginLeft: Metrics.unitMargin*3,
+    marginTop : Metrics.unitMargin
   },
   smallText:{
     fontSize: Metrics.unitFontSize*12,
-    marginLeft: Metrics.unitMargin*3
+    marginLeft: Metrics.unitMargin*3,
+    marginVertical : Metrics.unitMargin,
+    color: Colors.bar
   },
   modalView: { 
     flex: 1, 
@@ -127,19 +132,27 @@ export default StyleSheet.create({
     position: 'absolute',
     bottom: 0,
     left :0,
-    width: Metrics.unitMargin*10,
-    height: Metrics.unitMargin*6,
-    borderTopRightRadius: Metrics.unitFontSizeitMargin*2,
+    width: Metrics.unitMargin*11,
+    height: Metrics.unitMargin*8,
+    borderTopRightRadius: Metrics.unitMargin*2,
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: 'white'
+  },
+  heart:{
+    width: Metrics.unitMargin*4.5,
+    height: Metrics.unitMargin*4.5/22*19
+  },
+  account:{
+    width: Metrics.unitMargin*3,
+    height: Metrics.unitMargin*3/11*12
   },
   absoluteright:{
     position: 'absolute',
     bottom: 0,
     right :0,
-    width: Metrics.unitMargin*10,
-    height: Metrics.unitMargin*6,
+    width: Metrics.unitMargin*11,
+    height: Metrics.unitMargin*8,
     borderTopLeftRadius: Metrics.unitMargin*2,
     alignItems: 'center',
     justifyContent: 'center',
@@ -196,7 +209,7 @@ export default StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     backgroundColor: 'white',
-    width: Metrics.unitFontSize*350,
+    width: Metrics.unitFontSize*390,
     height: Metrics.unitMargin*7,
     paddingLeft: Metrics.unitMargin*3,
     borderRadius: 3
@@ -220,7 +233,8 @@ export default StyleSheet.create({
   },
   titleText:{
     fontSize: Metrics.unitFontSize*30,
-    fontWeight: '800'
+    fontWeight: '800',
+    marginLeft: Metrics.unitMargin
   },
   fullbutton: {
     backgroundColor: Colors.snow,

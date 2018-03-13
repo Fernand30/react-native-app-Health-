@@ -44,7 +44,7 @@ export default StyleSheet.create({
   },  
   mainView:{
     marginHorizontal: Metrics.unitMargin*4,
-    marginVertical: Metrics.unitMargin*4,
+    marginVertical: 0,
     padding: Metrics.unitMargin*4,
     borderRadius: 3,
     backgroundColor: 'white',
@@ -56,18 +56,18 @@ export default StyleSheet.create({
     backgroundColor: Colors.bar
   } ,
   button:{
-    width: Metrics.unitMargin*50,
-    height: Metrics.unitMargin*10,
+    width: Metrics.unitMargin*40,
+    height: Metrics.unitMargin*8,
     borderRadius: 3,
     alignItems: 'center',
     justifyContent:'center',
     backgroundColor: '#D8D8D8',
     alignSelf: 'center',
-    marginTop: Metrics.unitMargin*5
+    marginTop: Metrics.unitMargin*4
   },
   beginbutton:{
     width: Metrics.unitMargin*75,
-    height: Metrics.unitMargin*14,
+    height: Metrics.unitMargin*12,
     borderRadius: 3,
     alignItems: 'center',
     justifyContent:'center',
@@ -101,7 +101,7 @@ export default StyleSheet.create({
   },
   commonText:{
     textAlign: 'center',
-    marginBottom: Metrics.unitMargin*5,
+    marginBottom: Metrics.unitMargin*3,
     fontSize: Metrics.unitFontSize*16
   },
   smallText:{

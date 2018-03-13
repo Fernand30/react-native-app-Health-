@@ -229,9 +229,10 @@ export default StyleSheet.create({
     color: 'red'
   },
   commonText:{
-    fontSize: Metrics.unitFontSize*15,
+    fontSize: Metrics.unitFontSize*16,
     marginLeft: Metrics.unitMargin*3,
-    marginVertical: Metrics.unitMargin*3
+    marginVertical: Metrics.unitMargin,
+    textAlign: 'center'
   },
   eachView:{
     alignItems:'center',

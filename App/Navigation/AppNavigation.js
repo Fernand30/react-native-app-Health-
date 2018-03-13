@@ -77,29 +77,90 @@ const TabNavigatorStack = TabNavigator({
   HomeTab : { screen: HomeTab,
               navigationOptions: {
                 title: 'Home',
-                tabBarIcon: <Image source={Images.SelectedHome} style={styles.icon}/>,
+                tabBarIcon: ({ focused }) => {
+                      const image = focused 
+                      ? Images.SelectedHome 
+                      : Images.Home 
+                      return (
+                          <Image 
+                              source={image}
+                              style={styles.icon}
+                          />
+                      )
+                  }
                },
           
              },
   ExplorerTab : { screen: ExplorerTab,
               navigationOptions: {
                 title: 'Explor',
-                tabBarIcon: <Image source={Images.selectedSearch}  style={styles.icon}/>
+                tabBarIcon: ({ focused }) => {
+                      const image = focused 
+                      ? Images.selectedSearch 
+                      : Images.explorer 
+                      return (
+                          <Image 
+                              source={image}
+                              style={styles.icon}
+                          />
+                      )
+                  }
                }
              },
   AlarmTab : { screen: AlarmTab,
               navigationOptions: {
                 title: 'Alarm',
-                tabBarIcon: <Image source={Images.Alert}  style={styles.icon}/>
+                tabBarIcon: ({ focused }) => {
+                      const image = focused 
+                      ? Images.Alert 
+                      : Images.Alert 
+                      return (
+                          <Image 
+                              source={image}
+                              style={styles.icon}
+                          />
+                      )
+                  }
                }
              },
   AccountTab : { screen: AccountTab,
+
               navigationOptions: {
                 title: 'Account',
-                tabBarIcon: <Image source={Images.SelectedContacts}  style={styles.icon}/>
+                
+                tabBarIcon: ({ focused }) => {
+                      const image = focused 
+                      ? Images.SelectedContacts 
+                      : Images.Contacts  
+                      return (
+                          <Image 
+                              source={image}
+                              style={styles.icon}
+                          />
+                      )
+                  }
                }
              },
-});
+},
+  {
+    initialRouteName:"HomeTab",
+    lazy:true,
+    tabBarPosition:'bottom',
+    tabBarOptions: {
+      labelStyle: {
+        fontSize: Metrics.unitFontSize*10,
+        textAlign:'center',
+        marginBottom: Metrics.unitMargin*1.5,
+      },
+      showIcon:true,
+      showLabel:true,
+      activeTintColor:"#E33855",
+      inactiveTintColor:"#95989A"
+    },
+    style: {
+      backgroundColor: 'red',
+    },
+  });
 
 
 const PrimaryNav = StackNavigator({

@@ -8,8 +8,14 @@ import AuthActions from '../../Redux/AuthRedux'
 import FullButton from '../../Components/FullButton'
 import InputText from '../../Components/InputText'
 import Modal from "react-native-modal";
+import ImageSlider from 'react-native-image-slider';
 
 import styles from './Styles/HomeListScreenStyle'
+
+const images = [
+      Images.renderImage1,
+      Images.renderImage2
+    ]; 
 
 class LoginScreen extends Component {
   static navigationOptions = { header: null };
@@ -71,9 +77,18 @@ class LoginScreen extends Component {
             </TouchableOpacity>
           </View>
       <ScrollView>
-          <TouchableOpacity onPress={this.goModal.bind(this)}>
-            <Image source={Images.renderImage1} style={styles.renderImage1}/>
-          </TouchableOpacity>
+          
+          <ImageSlider
+            loopBothSides
+            autoPlayWithInterval={3000}
+            images={images}
+            customSlide={({ index, item, style, width }) => (
+              // It's important to put style here because it's got offset inside
+              <View key={index} style={[style, styles.customSlide]}>
+                <Image source={item } style={styles.renderImage1} />
+              </View>
+            )}
+          />
           <View style={styles.rowView}>
             <View style={styles.smalRowView}>
               <Image source={Images.ddff} style={styles.ddff}/>
@@ -94,7 +109,7 @@ class LoginScreen extends Component {
             <Image source={Images.renderImage2} style={styles.renderImage1}/>
             <View style={styles.absoluteleft}>
               <Image source={Images.account} style={styles.account}/>
-              <Text style={{fontSize: Metrics.unitFontSize*14}}>10</Text>
+              <Text style={{fontSize: Metrics.unitFontSize*15}}>10</Text>
             </View>
             <View style={styles.absoluteright}>
               <Image source={Images.heart} style={styles.heart}/>
