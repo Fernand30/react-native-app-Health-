@@ -8,8 +8,14 @@ import AuthActions from '../Redux/AuthRedux'
 import FullButton from '../Components/FullButton'
 import InputText from '../Components/InputText'
 import Modal from "react-native-modal";
+import ImageSlider from 'react-native-image-slider';
 
 import styles from './Styles/ViewProgramScreenStyle'
+
+const images = [
+      Images.renderImage1,
+      Images.renderImage2
+    ]; 
 
 class LoginScreen extends Component {
 
@@ -57,7 +63,17 @@ class LoginScreen extends Component {
        
          <ScrollView> 
           <View>
-            <Image source={Images.renderImage2} style={styles.renderImage1}/>
+            <ImageSlider
+            loopBothSides
+            autoPlayWithInterval={3000}
+            images={images}
+            customSlide={({ index, item, style, width }) => (
+              // It's important to put style here because it's got offset inside
+              <View key={index} style={[style, styles.customSlide]}>
+                <Image source={item } style={styles.renderImage1} />
+              </View>
+            )}
+          />
             
           </View> 
           <Text style={styles.commonText}>Julian Anderson's 30 Day Ultimate Spartan Shredder For{'\n'}Sports and Recreation</Text>

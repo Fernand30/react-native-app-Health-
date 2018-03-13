@@ -61,13 +61,17 @@ export default StyleSheet.create({
     paddingRight: Metrics.unitMargin*3
   },
   account1:{
-    width: Metrics.unitMargin*10,
-    height: Metrics.unitMargin*10,
+    width: Metrics.unitMargin*9,
+    height: Metrics.unitMargin*9,
     marginRight: Metrics.unitMargin*2
   },
   account:{
-    width: Metrics.unitMargin*3,
-    height: Metrics.unitMargin*3,
+    width: Metrics.unitMargin*2.2,
+    height: Metrics.unitMargin*2.2,
+  },
+  heart:{
+    width: Metrics.unitMargin*4,
+    height: Metrics.unitMargin*4/22*19,
   },
   michaelView:{
     flexDirection: 'row',
@@ -87,7 +91,7 @@ export default StyleSheet.create({
   },
   rowView:{
     flexDirection: 'row',
-    marginHorizontal: Metrics.unitMargin*5,
+    marginHorizontal: Metrics.unitMargin*3,
     justifyContent: 'space-between',
     alignItems:'center'
   },
@@ -130,7 +134,8 @@ export default StyleSheet.create({
   },
   text:{
     fontSize: Metrics.unitFontSize*13,
-    textAlign: 'center'
+    textAlign: 'center',
+    marginLeft : Metrics.unitMargin*3
   },
   michaeltext:{
     fontSize: Metrics.unitFontSize*14,
@@ -142,8 +147,10 @@ export default StyleSheet.create({
     color: 'red'
   },
   commonText:{
-    fontSize: Metrics.unitFontSize*17,
-    marginLeft: Metrics.unitMargin*3
+    fontSize: Metrics.unitFontSize*16,
+    marginLeft: Metrics.unitMargin*3,
+    marginTop: Metrics.unitMargin*2,
+    marginBottom: Metrics.unitMargin*1
   },
   greenText:{
     color: 'green',
@@ -152,7 +159,9 @@ export default StyleSheet.create({
   },
   smallText:{
     fontSize: Metrics.unitFontSize*12,
-    marginLeft: Metrics.unitMargin*3
+    marginLeft: Metrics.unitMargin*3,
+    color: Colors.bar,
+    marginVertical: Metrics.unitMargin*2
   },
   modalView: { 
     flex: 1, 
@@ -204,7 +213,7 @@ export default StyleSheet.create({
     left :0,
     width: Metrics.unitMargin*10,
     height: Metrics.unitMargin*6,
-    borderTopRightRadius: Metrics.unitFontSizeitMargin*2,
+    borderTopRightRadius: Metrics.unitMargin*2,
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: 'white'
@@ -317,7 +326,7 @@ export default StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     backgroundColor: 'white',
-    width: Metrics.unitFontSize*350,
+    width: Metrics.unitFontSize*390,
     height: Metrics.unitMargin*7,
     paddingLeft: Metrics.unitMargin*3,
     borderRadius: 3

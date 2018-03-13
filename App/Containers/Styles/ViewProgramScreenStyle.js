@@ -1,6 +1,7 @@
 import { StyleSheet } from 'react-native'
 import { ApplicationStyles, Metrics, Colors, Fonts } from '../../Themes/'
 
+
 export default StyleSheet.create({
   ...ApplicationStyles.screen,
   contentStyle: {
@@ -63,7 +64,7 @@ export default StyleSheet.create({
   account1:{
     width: Metrics.unitMargin*10,
     height: Metrics.unitMargin*10,
-    marginRight: Metrics.unitMargin*2
+    marginHorizontal: Metrics.unitMargin*3
   },
   account:{
     width: Metrics.unitMargin*3,
@@ -222,7 +223,8 @@ export default StyleSheet.create({
   commonText:{
     fontSize: Metrics.unitFontSize*16,
     marginLeft: Metrics.unitMargin*3,
-    textAlign: 'center'
+    textAlign: 'center',
+    marginVertical: Metrics.unitMargin*2
   },
   eachView:{
     alignItems:'center',
