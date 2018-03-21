@@ -57,6 +57,22 @@ const images = {
   session6: require('../Images/session6.png'),
   success: require('../Images/success.png'),
   failed: require('../Images/failed.png'),
+  programreview: require('../Images/programreview.png'),
+  yellowstar: require('../Images/yellowstar.png'),
+  graystar: require('../Images/graystar.png'),
+  calendar: require('../Images/calendar.png'),
+  coachchat: require('../Images/coachchat.png'),
+  filelocker: require('../Images/filelocker.png'),
+  programintro: require('../Images/programintro.png'),
+  programreview: require('../Images/programreview.png'),
+  sessionsettings: require('../Images/sessionsettings.png'),
+  timer: require('../Images/timer.png'),
+  bank: require('../Images/bank.png'),
+  etherum: require('../Images/etherum.png'),
+  litcoin: require('../Images/litcoin.png'),
+  payment: require('../Images/payment.png'),
+  paypal: require('../Images/paypal.png'),
+  personal: require('../Images/personal.png'),
 }
 
 export default images

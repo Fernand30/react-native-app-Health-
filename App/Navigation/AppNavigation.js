@@ -28,6 +28,11 @@ import AccountSettingScreen from "../Containers/TabScreens/AccountSettingScreen"
 import AccountClientScreen from "../Containers/TabScreens/AccountClientScreen";
 import AccountCoachScreen from "../Containers/TabScreens/AccountCoachScreen";
 import SessionSettingScreen from "../Containers/TabScreens/SessionSettingScreen";
+import ProgramReviewScreen from "../Containers/TabScreens/ProgramReviewScreen";
+import SessionDashboardScreen from "../Containers/TabScreens/SessionDashboardScreen";
+import ProgramIntroductionScreen from "../Containers/TabScreens/ProgramIntroductionScreen";
+import BillingDetailScreen from "../Containers/TabScreens/BillingDetailScreen";
+import BankDetailScreen from "../Containers/TabScreens/BankDetailScreen";
 
 import AlarmScreen from "../Containers/TabScreens/AlarmScreen";
 
@@ -103,6 +108,21 @@ const AccountTab = StackNavigator({
   },
   MyProgramScreen: {
     screen: MyProgramScreen
+  },
+  ProgramReviewScreen: {
+    screen: ProgramReviewScreen
+  },
+  SessionDashboardScreen: {
+    screen: SessionDashboardScreen
+  },
+  ProgramIntroductionScreen: {
+    screen: ProgramIntroductionScreen
+  },
+  BillingDetailScreen: {
+    screen: BillingDetailScreen
+  },
+  BankDetailScreen: {
+    screen: BankDetailScreen
   }
 })
 

@@ -135,6 +135,14 @@ class WelcomeScreen extends Component {
     this.props.navigation.dispatch(sessionsettings);
   }
 
+  billingdetail(){
+    const billingdetail = NavigationActions.navigate({
+      routeName: "BillingDetailScreen",
+      params: {}
+    });
+    this.props.navigation.dispatch(billingdetail);
+  }
+
   render () {
     return (
       <SafeAreaView style={ApplicationStyles.screen.yellowContent}> 
@@ -209,13 +217,13 @@ class WelcomeScreen extends Component {
             <Text style={styles.policyText}>Terms of Service & Privacy Policy</Text>
             <Image source={Images.Arrow} style={styles.arrow}/>
           </TouchableOpacity>
-          <View style={styles.policyView1}>
+          <TouchableOpacity onPress={this.billingdetail.bind(this)} style={styles.policyView1}>
             <View style={styles.circleView}>
              <Text style={styles.itext}>i</Text>
             </View>
             <Text style={styles.policyText}>Contact Suppoert</Text>
             <Image source={Images.Arrow} style={styles.arrow}/>
-          </View>
+          </TouchableOpacity>
           <View style={styles.policyView1}>
             <View style={styles.circleView}>
              <Text style={styles.itext}>i</Text>

@@ -32,6 +32,22 @@ class WelcomeScreen extends Component {
     this.props.navigation.dispatch(NavigationActions.back());
   }
 
+  programreview(){
+    const programreview = NavigationActions.navigate({
+      routeName: "ProgramReviewScreen",
+      params: {}
+    });
+    this.props.navigation.dispatch(programreview);
+  }
+
+  sessiondashboard(){
+    const sessiondashboard = NavigationActions.navigate({
+      routeName: "SessionDashboardScreen",
+      params: {}
+    });
+    this.props.navigation.dispatch(sessiondashboard);
+  }
+
   _renderItem({item}){
     return(
       <View style={styles.renderView}>
@@ -39,10 +55,10 @@ class WelcomeScreen extends Component {
         <View style={styles.explain}>
           <Text style={styles.text}>Julian Anderson’s 30 Day Ultimate Spartan Shredder For{'\n'}
               Sports and Recreation</Text>
-          <TouchableOpacity style={styles.listbutton}>
+          <TouchableOpacity onPress={this.programreview.bind(this)} style={styles.listbutton}>
             <Text style={styles.text1}>View Program Listing</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.deletebutton}>
+          <TouchableOpacity  onPress={this.sessiondashboard.bind(this)} style={styles.deletebutton}>
             <Text style={styles.text1}>Delete Program</Text>
           </TouchableOpacity>
         </View>
@@ -73,7 +89,7 @@ class WelcomeScreen extends Component {
            <FlatList
               data={data}
               keyExtractor={(item, index) => index}
-              renderItem={this._renderItem}
+              renderItem={this._renderItem.bind(this)}
             />
           </View>
         </View>  

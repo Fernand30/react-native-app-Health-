@@ -30,7 +30,10 @@ const colors = {
   carousel: '#bab9b9',
   search: '#f5f5f5',
   border: '#8b8b8b',
-  inputText: '#909090'
+  inputText: '#909090',
+  green: '#12C652',
+  border: '#BEBEBE',
+  blue: '#3579D5'
 }
 
 export default colors
