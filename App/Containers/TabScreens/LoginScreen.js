@@ -32,6 +32,14 @@ class LoginScreen extends Component {
     this.props.navigation.dispatch(CreateAccountScreen);
   }
 
+  SignIn = () => {
+    const AccountScreen = NavigationActions.navigate({
+      routeName: "AccountScreen",
+      params: {}
+    });
+    this.props.navigation.dispatch(AccountScreen);
+  }
+
   goCancel(){
     this.props.navigation.dispatch(NavigationActions.back());
   }
@@ -48,8 +56,7 @@ class LoginScreen extends Component {
               </TouchableOpacity>
             </View>
             <View style={styles.headerCenterView}>
-              <Image source={Images.muscle} style={styles.muscle}/>
-              <Text style={ApplicationStyles.screen.titleText}>Health App</Text>
+              <Image source={Images.logo} style={styles.muscle}/>
             </View>
             <View style={styles.headerRightView}>
 
@@ -71,7 +78,7 @@ class LoginScreen extends Component {
               color: Colors.white,
               fontSize: Metrics.unitFontSize * 20,
             }}
-            onPress={()=>{this.goTabNavigation()}}
+            
           />
           <View style={styles.orrow}>
             <View style={styles.lineView}/>
@@ -109,7 +116,7 @@ class LoginScreen extends Component {
               color: Colors.white,
               fontSize: Metrics.unitFontSize * 18,
             }}
-            onPress={()=>{}}
+            onPress={()=>{this.SignIn()}}
           />
           <View style={styles.rowView}>
             <FullButton
@@ -117,7 +124,7 @@ class LoginScreen extends Component {
               style={{
                 backgroundColor: 'transparent',
                 alignItems: 'center',
-                marginTop: Metrics.unitMargin*1
+                marginTop: Metrics.unitMargin*8
               }}
               textStyle={{
                 color: Colors.navy,
@@ -131,7 +138,7 @@ class LoginScreen extends Component {
             style={{
               backgroundColor: 'transparent',
               alignItems: 'center',
-              marginTop: Metrics.unitMargin*1
+              marginTop: Metrics.unitMargin*8
             }}
             textStyle={{
               color: Colors.navy,

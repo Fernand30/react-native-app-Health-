@@ -35,7 +35,7 @@ export default StyleSheet.create({
   },
   ddff:{
     width: Metrics.unitMargin*3,
-    height: Metrics.unitMargin*6 
+    height: Metrics.unitMargin*6
   },
   buildMuscle:{
     width: Metrics.unitMargin*4,
@@ -47,7 +47,7 @@ export default StyleSheet.create({
   },
   Boast:{
     width: Metrics.unitMargin*4,
-    height: Metrics.unitMargin*4 
+    height: Metrics.unitMargin*4
   },
   star:{
     width: Metrics.unitMargin*5,
@@ -82,8 +82,8 @@ export default StyleSheet.create({
   },
   commonText:{
     fontSize: Metrics.unitFontSize*17,
-    marginLeft: Metrics.unitMargin*3,
-    marginTop : Metrics.unitMargin
+    textAlign: 'center',
+    marginVertical: Metrics.unitMargin*2
   },
   smallText:{
     fontSize: Metrics.unitFontSize*12,
@@ -91,10 +91,10 @@ export default StyleSheet.create({
     marginVertical : Metrics.unitMargin,
     color: Colors.bar
   },
-  modalView: { 
-    flex: 1, 
-    marginHorizontal: Metrics.unitMargin*2, 
-    marginVertical: Metrics.unitMargin*4, 
+  modalView: {
+    flex: 1,
+    marginHorizontal: Metrics.unitMargin*2,
+    marginVertical: Metrics.unitMargin*4,
     backgroundColor: 'white',
     borderRadius: 5,
     justifyContent: 'flex-end',
@@ -130,7 +130,7 @@ export default StyleSheet.create({
   absoluteleft:{
     flexDirection: 'row',
     position: 'absolute',
-    bottom: 0,
+    bottom: - Metrics.unitMargin,
     left :0,
     width: Metrics.unitMargin*11,
     height: Metrics.unitMargin*8,
@@ -149,7 +149,7 @@ export default StyleSheet.create({
   },
   absoluteright:{
     position: 'absolute',
-    bottom: 0,
+    bottom: - Metrics.unitMargin,
     right :0,
     width: Metrics.unitMargin*11,
     height: Metrics.unitMargin*8,
@@ -183,11 +183,11 @@ export default StyleSheet.create({
   },
   backArrow:{
     width: Metrics.unitMargin*5,
-    height: Metrics.unitMargin*5/19*16  
+    height: Metrics.unitMargin*5/19*16
   },
   search:{
     width: Metrics.unitMargin*3,
-    height: Metrics.unitMargin*3 
+    height: Metrics.unitMargin*3
   },
   emailText:{
     fontSize: Metrics.unitFontSize*15,
@@ -209,7 +209,8 @@ export default StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     backgroundColor: 'white',
-    width: Metrics.unitFontSize*390,
+    flex:1,
+    marginRight: Metrics.unitMargin*5,
     height: Metrics.unitMargin*7,
     paddingLeft: Metrics.unitMargin*3,
     borderRadius: 3
@@ -228,8 +229,8 @@ export default StyleSheet.create({
     height: Metrics.unitMargin*13,
   },
   muscle: {
-    width:Metrics.unitMargin*12,
-    height:Metrics.unitMargin*12/90*67,
+    width:Metrics.unitMargin*40,
+    height:Metrics.unitMargin*40/1500*353,
   },
   titleText:{
     fontSize: Metrics.unitFontSize*30,

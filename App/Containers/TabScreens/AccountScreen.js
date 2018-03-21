@@ -87,12 +87,52 @@ class WelcomeScreen extends Component {
     this.props.navigation.dispatch(CreateAccountStack);
   }
 
-  goTabNavigation(){
-    const TabNavigatorStack = NavigationActions.navigate({
-      routeName: "TabNavigatorStack",
+  mysession(){
+    const mysession = NavigationActions.navigate({
+      routeName: "MySessionScreen",
       params: {}
     });
-    this.props.navigation.dispatch(TabNavigatorStack);
+    this.props.navigation.dispatch(mysession);
+  }
+
+  myprogram(){
+    const myprogram = NavigationActions.navigate({
+      routeName: "MyProgramScreen",
+      params: {}
+    });
+    this.props.navigation.dispatch(myprogram);
+  }
+
+  setting(){
+    const setting = NavigationActions.navigate({
+      routeName: "AccountSettingScreen",
+      params: {}
+    });
+    this.props.navigation.dispatch(setting);
+  }
+
+  client(){
+    const client = NavigationActions.navigate({
+      routeName: "AccountClientScreen",
+      params: {}
+    });
+    this.props.navigation.dispatch(client);
+  }
+
+  coach(){
+    const coach = NavigationActions.navigate({
+      routeName: "AccountCoachScreen",
+      params: {}
+    });
+    this.props.navigation.dispatch(coach);
+  }
+
+  sessionsettings(){
+    const sessionsettings = NavigationActions.navigate({
+      routeName: "SessionSettingScreen",
+      params: {}
+    });
+    this.props.navigation.dispatch(sessionsettings);
   }
 
   render () {
@@ -120,13 +160,13 @@ class WelcomeScreen extends Component {
             <Text style={styles.tokenText}>1200 EGG Tokens</Text>
           </View>
           
-          <View style={styles.policyView}>
+          <TouchableOpacity onPress={this.setting.bind(this)} style={styles.policyView}>
             <View style={styles.circleView}>
              <Text style={styles.itext}>i</Text>
             </View>
             <Text style={styles.policyText}>Settings</Text>
             <Image source={Images.Arrow} style={styles.arrow}/>
-          </View>
+          </TouchableOpacity>
           <View style={styles.policyView1}>
             <View style={styles.circleView}>
              <Text style={styles.itext}>i</Text>
@@ -134,41 +174,41 @@ class WelcomeScreen extends Component {
             <Text style={styles.policyText}>Inbox</Text>
             <Image source={Images.Arrow} style={styles.arrow}/>
           </View>
-          <View style={styles.policyView1}>
+          <TouchableOpacity  onPress={this.myprogram.bind(this)} style={styles.policyView1}>
             <View style={styles.circleView}>
              <Text style={styles.itext}>i</Text>
             </View>
             <Text style={styles.policyText}>My Programs</Text>
             <Image source={Images.Arrow} style={styles.arrow}/>
-          </View>
-          <View style={styles.policyView1}>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={this.mysession.bind(this)} style={styles.policyView1}>
             <View style={styles.circleView}>
              <Text style={styles.itext}>i</Text>
             </View>
             <Text style={styles.policyText}>My Settings</Text>
             <Image source={Images.Arrow} style={styles.arrow}/>
-          </View>
-          <View style={styles.policyView1}>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={this.client.bind(this)} style={styles.policyView1}>
             <View style={styles.circleView}>
              <Text style={styles.itext}>i</Text>
             </View>
             <Text style={styles.policyText}>Edit Profile</Text>
             <Image source={Images.Arrow} style={styles.arrow}/>
-          </View>
-          <View style={styles.policyView1}>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={this.coach.bind(this)} style={styles.policyView1}>
             <View style={styles.circleView}>
              <Text style={styles.itext}>i</Text>
             </View>
             <Text style={styles.policyText}>Billing Information</Text>
             <Image source={Images.Arrow} style={styles.arrow}/>
-          </View>
-          <View style={styles.policyView1}>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={this.sessionsettings.bind(this)} style={styles.policyView1}>
             <View style={styles.circleView}>
              <Text style={styles.itext}>i</Text>
             </View>
             <Text style={styles.policyText}>Terms of Service & Privacy Policy</Text>
             <Image source={Images.Arrow} style={styles.arrow}/>
-          </View>
+          </TouchableOpacity>
           <View style={styles.policyView1}>
             <View style={styles.circleView}>
              <Text style={styles.itext}>i</Text>

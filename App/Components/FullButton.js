@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-//import { TouchableOpacity, Text } from 'react-native'
+import { TouchableOpacity, Text } from 'react-native'
 import styles from './Styles/FullButtonStyles'
 import ExamplesRegistry from '../Services/ExamplesRegistry'
-import { Button, Text } from 'native-base'
+//import { Button, Text } from 'native-base'
 
 // Note that this file (App/Components/FullButton) needs to be
 // imported in your app somewhere, otherwise your component won't be
@@ -28,12 +28,12 @@ export default class FullButton extends Component {
 
   render () {
     return (
-      /*<TouchableOpacity style={[styles.button, this.props.styles]} onPress={this.props.onPress}>
-        <Text style={styles.buttonText}>{this.props.text && this.props.text.toUpperCase()}</Text>
-      </TouchableOpacity>*/
-      <Button block style={[styles.button, this.props.style]} onPress={this.props.onPress}>
+      <TouchableOpacity style={[styles.button, this.props.style]} onPress={this.props.onPress}>
+        <Text style={this.props.textStyle}>{this.props.text && this.props.text}</Text>
+      </TouchableOpacity>
+      /*<Button block style={[styles.button, this.props.style]} onPress={this.props.onPress}>
         <Text style={[styles.buttonText, this.props.textStyle]}>{this.props.text && this.props.text}</Text>
-      </Button>
+      </Button>*/
     )
   }
 }

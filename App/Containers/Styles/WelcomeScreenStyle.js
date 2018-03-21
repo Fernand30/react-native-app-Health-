@@ -6,9 +6,9 @@ export default StyleSheet.create({
   contentStyle: {
     flex: 1,
     paddingHorizontal: Metrics.unitMargin*6,
-    paddingTop: Metrics.unitMargin*25,
-    paddingBottom: Metrics.unitMargin*6,
-    backgroundColor: Colors.background
+    backgroundColor: Colors.background,
+    justifyContent: 'space-between',
+    paddingVertical: Metrics.unitMargin*2,
   },
   inputContainer: {
     backgroundColor: Colors.snow,
@@ -19,13 +19,13 @@ export default StyleSheet.create({
     height: 40
   },
   titleView: {
+    flex:1,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center'
   },
-  muscle: {
-    width:Metrics.unitMargin*24,
-    height:Metrics.unitMargin*24/90*67,
+  buttonView: {
+    flex:1.5,
   },
   titleText:{
     fontSize: Metrics.unitFontSize*57,

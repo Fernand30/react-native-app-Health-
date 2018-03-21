@@ -64,6 +64,7 @@ const ApplicationStyles = {
       fontSize: Metrics.unitFontSize*12,
       width: Metrics.unitMargin*30,
       backgroundColor: 'transparent',
+      color:Colors.inputText
     },
     whiteContent:{
       flex: 1,

@@ -11,15 +11,24 @@ import CompleteCheckScreen from '../Containers/CompleteCheckScreen'
 import HomeListScreen from "../Containers/TabScreens/HomeListScreen";
 import SearchScreen from "../Containers/TabScreens/SearchScreen";
 import TypingSearchScreen from "../Containers/TabScreens/TypingSearchScreen";
+import ExplorerScreen from "../Containers/TabScreens/ExplorerScreen";
 import ResultSearchScreen from "../Containers/TabScreens/ResultSearchScreen";
 import AccountLoginScreen from "../Containers/TabScreens/LoginScreen";
 import AccountWelcomeScreen from "../Containers/TabScreens/WelcomeScreen";
 import AccountResetPasswordScreen from "../Containers/TabScreens/ResetPasswordScreen";
 import AccountAuthenticationScreen from "../Containers/TabScreens/AuthenticationScreen";
+import VerifyScreen from "../Containers/TabScreens/VerifyScreen";
 import AccountCreateAccountScreen from "../Containers/TabScreens/CreateAccountScreen";
 import AccountCreateAccountWithFacebookScreen from "../Containers/TabScreens/CreateAccountWithFacebookScreen";
 import AccountCreateAccountWithOnlyUsernameScreen from "../Containers/TabScreens/CreateAccountWithOnlyUsernameScreen";
 import AccountAccountScreen from "../Containers/TabScreens/AccountScreen";
+import MySessionScreen from "../Containers/TabScreens/MySessionScreen";
+import MyProgramScreen from "../Containers/TabScreens/MyProgramScreen";
+import AccountSettingScreen from "../Containers/TabScreens/AccountSettingScreen";
+import AccountClientScreen from "../Containers/TabScreens/AccountClientScreen";
+import AccountCoachScreen from "../Containers/TabScreens/AccountCoachScreen";
+import SessionSettingScreen from "../Containers/TabScreens/SessionSettingScreen";
+
 import AlarmScreen from "../Containers/TabScreens/AlarmScreen";
 
 import { Images, Colors, Metrics, ApplicationStyles } from '../Themes'
@@ -39,6 +48,9 @@ const ExplorerTab = StackNavigator({
   },
   ResultSearchScreen: {
     screen: ResultSearchScreen
+  },
+  ExplorerScreen: {
+    screen: ExplorerScreen
   }
 })
 
@@ -59,6 +71,9 @@ const AccountTab = StackNavigator({
   AuthenticationScreen: {
     screen: AccountAuthenticationScreen
   },
+  VerifyScreen: {
+    screen: VerifyScreen
+  },
   CreateAccountScreen: {
     screen: AccountCreateAccountScreen
   },
@@ -70,6 +85,24 @@ const AccountTab = StackNavigator({
   },
   AccountScreen: {
     screen: AccountAccountScreen
+  },
+  MySessionScreen: {
+    screen: MySessionScreen
+  },
+  AccountSettingScreen: {
+    screen: AccountSettingScreen
+  },
+  AccountClientScreen: {
+    screen: AccountClientScreen
+  },
+  AccountCoachScreen: {
+    screen: AccountCoachScreen
+  },
+  SessionSettingScreen: {
+    screen: SessionSettingScreen
+  },
+  MyProgramScreen: {
+    screen: MyProgramScreen
   }
 })
 
@@ -152,14 +185,21 @@ const TabNavigatorStack = TabNavigator({
         textAlign:'center',
         marginBottom: Metrics.unitMargin*1.5,
       },
+      indicatorStyle: {
+        borderBottomColor: '#ffffff',
+        borderBottomWidth: 2,
+      },
+      style: {
+        borderTopWidth: 0,
+        backgroundColor: 'white',
+        borderColor: 'white',
+      },
       showIcon:true,
       showLabel:true,
       activeTintColor:"#E33855",
       inactiveTintColor:"#95989A"
     },
-    style: {
-      backgroundColor: 'red',
-    },
+    
   });
 
 
@@ -183,3 +223,5 @@ const PrimaryNav = StackNavigator({
  })
 
 export default PrimaryNav
+
+

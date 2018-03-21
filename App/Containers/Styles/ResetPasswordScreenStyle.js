@@ -51,7 +51,7 @@ export default StyleSheet.create({
   },
   muscle: {
     width:Metrics.unitMargin*24,
-    height:Metrics.unitMargin*24/90*67,
+    height:Metrics.unitMargin*24/777*661,
   },
   titleText:{
     fontSize: Metrics.unitFontSize*22,

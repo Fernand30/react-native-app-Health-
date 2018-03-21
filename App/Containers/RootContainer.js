@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, StatusBar } from 'react-native'
+import { View, StatusBar, SafeAreaView, BackHandler  } from 'react-native'
 import ReduxNavigation from '../Navigation/ReduxNavigation'
 import { connect } from 'react-redux'
 import ReduxPersist from '../Config/ReduxPersist'
@@ -14,10 +14,26 @@ class RootContainer extends Component {
     }
   }*/
 
+  componentDidMount() {
+    BackHandler.addEventListener('hardwareBackPress', this.handleBackButton);
+  }
+
+  componentWillUnmount() {
+    BackHandler.removeEventListener('hardwareBackPress', this.handleBackButton);
+  }
+
+  handleBackButton() {
+    return true;
+  }
+
+
   render () {
     return (
       <View style={styles.applicationView}>
-        <StatusBar barStyle='dark-content'/>
+        <StatusBar
+           backgroundColor="#fef066"
+           barStyle="dark-content"
+         />
         <ReduxNavigation />
       </View>
     )

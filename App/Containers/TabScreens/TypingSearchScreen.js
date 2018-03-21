@@ -57,6 +57,7 @@ class LoginScreen extends Component {
               <InputText placeholder={'Search for programs or coaches'}
                      style={styles.inputStyle}
                      fontSize={Metrics.unitFontSize*13}
+                     onChangeText = {()=>{}}
               />
             </View>
             <TouchableOpacity onPress={this.typingSearch.bind(this)}>

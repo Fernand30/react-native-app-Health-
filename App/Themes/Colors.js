@@ -29,7 +29,8 @@ const colors = {
   bar: '#d0d0d0',
   carousel: '#bab9b9',
   search: '#f5f5f5',
-  border: '#8b8b8b'
+  border: '#8b8b8b',
+  inputText: '#909090'
 }
 
 export default colors

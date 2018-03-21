@@ -35,6 +35,14 @@ class LoginScreen extends Component {
     this.props.navigation.dispatch(TypingSearchScreen);
   }
 
+  Explorer(){
+    const Explorer = NavigationActions.navigate({
+      routeName: "ExplorerScreen",
+      params: {}
+    });
+    this.props.navigation.dispatch(Explorer);
+  }
+
   resultSearch(){
     const ResultSearchScreen = NavigationActions.navigate({
       routeName: "ResultSearchScreen",
@@ -59,6 +67,7 @@ class LoginScreen extends Component {
               <InputText placeholder={'Search for programs or coaches'}
                      style={styles.inputStyle}
                      fontSize={Metrics.unitFontSize*13}
+                     onChangeText = {()=>{}}
               />
             </View>
             <TouchableOpacity onPress={this.resultSearch.bind(this)}>
@@ -66,7 +75,10 @@ class LoginScreen extends Component {
             </TouchableOpacity>
           </View>
           <View style={styles.searchTitleView}>
-            <Text style= {styles.titleText}>Recently searched</Text>
+            <TouchableOpacity onPress={this.Explorer.bind(this)}>
+              <Text style= {styles.titleText}>Recently searched</Text>
+            </TouchableOpacity>
+            
             <TouchableOpacity onPress={this.typingSearch.bind(this)}>
               <Text style= {styles.titleText}>Erase Search History</Text>
             </TouchableOpacity>

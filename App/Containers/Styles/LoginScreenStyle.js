@@ -12,7 +12,7 @@ export default StyleSheet.create({
     flexDirection: 'row',
     alignItems:'center',
     height: Metrics.unitMargin*15,
-    paddingLeft: Metrics.unitMargin*5,
+    paddingHorizontal: Metrics.unitMargin*5,
   },
   headerCenterView:{
     flex: 1
@@ -29,6 +29,14 @@ export default StyleSheet.create({
   inputStyle: {
     height: Metrics.unitMargin*13,
   },
+  check:{
+    width: Metrics.unitMargin*5,
+    height: Metrics.unitMargin*5/21*15
+  },
+  close:{
+    width: Metrics.unitMargin*4,
+    height: Metrics.unitMargin*4
+  },
   headerView: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -41,7 +49,7 @@ export default StyleSheet.create({
   },
   muscle: {
     width:Metrics.unitMargin*24,
-    height:Metrics.unitMargin*24/90*67,
+    height:Metrics.unitMargin*24/777*661,
   },
   titleText:{
     fontSize: Metrics.unitFontSize*22,

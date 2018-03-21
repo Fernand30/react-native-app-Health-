@@ -92,22 +92,13 @@ class WelcomeScreen extends Component {
     this.props.navigation.dispatch(CreateAccountScreen);
   }
 
-  goTabNavigation(){
-    const TabNavigatorStack = NavigationActions.navigate({
-      routeName: "TabNavigatorStack",
-      params: {}
-    });
-    this.props.navigation.dispatch(TabNavigatorStack);
-  }
-
   render () {
     return (
       <SafeAreaView style={ApplicationStyles.screen.yellowContent}> 
       <Container>
         <View style={styles.contentStyle}>
            <View style={styles.headerView}>
-                      <Image source={Images.muscle} style={styles.muscle}/>
-                      <Text style={styles.titleText}>Health App</Text>
+                      <Image source={Images.logo} style={styles.muscle}/>
                     </View>
                     <Text style={styles.welcome}>Welcome to Fry Egg!</Text>
                     <Text style={styles.join}>Join or sign in to get started</Text>
@@ -141,7 +132,7 @@ class WelcomeScreen extends Component {
                         color: Colors.white,
                         fontSize: Metrics.unitFontSize * 20,
                       }}
-                      onPress={()=>{this.goTabNavigation()}}
+                      onPress={()=>{}}
                     />
                     <View style={styles.orrow}>
                       <View style={styles.lineView}/>

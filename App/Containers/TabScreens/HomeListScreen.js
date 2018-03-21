@@ -15,7 +15,7 @@ import styles from './Styles/HomeListScreenStyle'
 const images = [
       Images.renderImage1,
       Images.renderImage2
-    ]; 
+    ];
 
 class LoginScreen extends Component {
   static navigationOptions = { header: null };
@@ -53,16 +53,16 @@ class LoginScreen extends Component {
         <View style={styles.contentStyle}>
           <View style={styles.headerView}>
             <View style={styles.headerLeftView}>
-              
+
             </View>
             <View style={styles.headerCenterView}>
-              <Image source={Images.muscle} style={styles.muscle}/>
-              <Text style={styles.titleText}>Health App</Text>
+              <Image source={Images.logo} style={styles.muscle}/>
+             
             </View>
             <View style={styles.headerRightView}>
 
             </View>
-            
+
           </View>
           <View style={styles.searchView}>
             <View style={styles.inputView}>
@@ -77,7 +77,7 @@ class LoginScreen extends Component {
             </TouchableOpacity>
           </View>
       <ScrollView>
-          
+
           <ImageSlider
             loopBothSides
             autoPlayWithInterval={3000}
@@ -106,7 +106,9 @@ class LoginScreen extends Component {
             </View>
           </View>
           <View>
-            <Image source={Images.renderImage2} style={styles.renderImage1}/>
+            <TouchableOpacity onPress={this.goModal.bind(this)}>
+              <Image source={Images.renderImage2} style={styles.renderImage1}/>
+            </TouchableOpacity>
             <View style={styles.absoluteleft}>
               <Image source={Images.account} style={styles.account}/>
               <Text style={{fontSize: Metrics.unitFontSize*15}}>10</Text>
@@ -114,19 +116,19 @@ class LoginScreen extends Component {
             <View style={styles.absoluteright}>
               <Image source={Images.heart} style={styles.heart}/>
             </View>
-          </View> 
+          </View>
           <Text style={styles.commonText}>Julian Anderson's 30 Day Ultimate Spartan Shredder For{'\n'}Sports and Recreation</Text>
           <View style={styles.rowView}>
             <View style={styles.yellowRowView}>
               <Image source={Images.buildMuscle} style={styles.buildMuscle}/>
               <Text style={styles.text}>Build{'\n'}Muscie</Text>
             </View>
-            
+
             <View style={styles.yellowRowView}>
               <Image source={Images.increaseFocus} style={styles.increaseFocus}/>
               <Text style={styles.text}>Increase{'\n'}Focus</Text>
             </View>
-            
+
             <View style={styles.yellowRowView}>
               <Image source={Images.Boast} style={styles.Boast}/>
               <Text style={styles.text}>Boast{'\n'}TestOsterOne</Text>
@@ -134,7 +136,9 @@ class LoginScreen extends Component {
           </View>
           <Text style={styles.smallText}>Julian Anderson's 30 Day Ultimate Spartan Shredder For Sports andsdf sdffas{'\n'}Recreation is and amazing program that can get you the results that sdfs dfsdf</Text>
           <View>
-            <Image source={Images.renderImage2} style={styles.renderImage1}/>
+            <TouchableOpacity onPress={this.goModal.bind(this)}>
+              <Image source={Images.renderImage2} style={styles.renderImage1}/>
+            </TouchableOpacity>
             <View style={styles.absoluteleft}>
               <Image source={Images.account} style={styles.account}/>
               <Text style={{fontSize: Metrics.unitFontSize*14}}>10</Text>
@@ -142,26 +146,26 @@ class LoginScreen extends Component {
             <View style={styles.absoluteright}>
               <Image source={Images.heart} style={styles.heart}/>
             </View>
-          </View> 
+          </View>
           <Text style={styles.commonText}>Julian Anderson's 30 Day Ultimate Spartan Shredder For{'\n'}Sports and Recreation</Text>
           <View style={styles.rowView}>
             <View style={styles.yellowRowView}>
               <Image source={Images.buildMuscle} style={styles.buildMuscle}/>
               <Text style={styles.text}>Build{'\n'}Muscie</Text>
             </View>
-            
+
             <View style={styles.yellowRowView}>
               <Image source={Images.increaseFocus} style={styles.increaseFocus}/>
               <Text style={styles.text}>Increase{'\n'}Focus</Text>
             </View>
-            
+
             <View style={styles.yellowRowView}>
               <Image source={Images.Boast} style={styles.Boast}/>
               <Text style={styles.text}>Boast{'\n'}TestOsterOne</Text>
             </View>
           </View>
           <Text style={styles.smallText}>Julian Anderson's 30 Day Ultimate Spartan Shredder For Sports andsdf sdffas{'\n'}Recreation is and amazing program that can get you the results that sdfs dfsdf</Text>
-        </ScrollView>  
+        </ScrollView>
         </View>
         <Modal isVisible={this.state.visible}>
           <View style={styles.modalView}>
@@ -179,7 +183,7 @@ class LoginScreen extends Component {
           </View>
         </Modal>
       </Container>
-    </SafeAreaView>  
+    </SafeAreaView>
     )
   }
 }

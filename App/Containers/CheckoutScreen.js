@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, Image, Text, SafeAreaView, ScrollView, TouchableOpacity,Switch } from 'react-native'
+import { View, Image, Text, SafeAreaView, ScrollView, TouchableOpacity,Switch,BackHandler } from 'react-native'
 import { connect } from 'react-redux'
 import { NavigationActions } from "react-navigation";
 import { Images, Colors, Metrics, ApplicationStyles } from '../Themes'
@@ -7,7 +7,6 @@ import { Container, Content, Form, Item, Input, Spinner, Toast } from 'native-ba
 import AuthActions from '../Redux/AuthRedux'
 import FullButton from '../Components/FullButton'
 import InputText from '../Components/InputText'
-import Modal from "react-native-modal";
 
 import styles from './Styles/CheckoutScreenStyle'
 
@@ -20,6 +19,26 @@ class LoginScreen extends Component {
       category: true
     })
   }
+
+  componentDidMount() {
+    that  = this
+    BackHandler.addEventListener('hardwareBackPress', function() {
+        that.goback();
+        return true;
+    });
+  }
+
+  componentWillUnmount() {
+    BackHandler.removeEventListener('hardwareBackPress', this.handleBackButton);
+  }
+
+  handleBackButton() {
+    return true;
+  }
+
+  goback = () => {
+    this.props.navigation.dispatch(NavigationActions.back());
+  };
 
   goCancel(){
     this.props.navigation.dispatch(NavigationActions.back());

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, Image, Text, SafeAreaView } from 'react-native'
+import { View, Image, Text, SafeAreaView, Alert,BackHandler } from 'react-native'
 import { connect } from 'react-redux'
 import { NavigationActions } from "react-navigation";
 import { Images, Colors, Metrics, ApplicationStyles } from '../Themes'
@@ -16,12 +16,52 @@ class LoginScreen extends Component {
     super(props)
   }
 
+  componentDidMount() {
+    that  = this
+    BackHandler.addEventListener('hardwareBackPress', function() {
+        that.goback();
+        return true;
+    });
+  }
+
+  componentWillUnmount() {
+    BackHandler.removeEventListener('hardwareBackPress', this.handleBackButton);
+  }
+
+  handleBackButton() {
+    return true;
+  }
+
+  goback = () => {
+    this.props.navigation.dispatch(NavigationActions.back());
+  };
+
   handleLogin = () => {
     
   }
 
   goCancel(){
     this.props.navigation.dispatch(NavigationActions.back());
+  }
+
+  verification = (v) => {
+    const verification = NavigationActions.navigate({
+      routeName: "VerifyScreen",
+      params: {verification:v}
+    });
+    this.props.navigation.dispatch(verification);
+  }
+
+  policyalert(){
+    Alert.alert(
+      '',
+      'By tapping "Continue" you agree\nto the Terms and Conditions and Privacy Policyof Fry Egg.',
+      [
+        {text: 'Cancel', onPress: () => this.verification(false), style: 'cancel'},
+        {text: 'Continu', onPress: () => this.verification(true),style: 'continue'},
+      ],
+      { cancelable: false }
+    )
   }
 
   render () {
@@ -58,6 +98,7 @@ class LoginScreen extends Component {
                      fontSize={Metrics.unitFontSize*15}
                      autoFocus={true}  
               />
+              <Image source={Images.check} style={styles.check}/>
             </Item>
             <Item regular style={styles.inputContainer}>
               <Text style={ApplicationStyles.screen.emailText}>EMAIL</Text>
@@ -67,6 +108,7 @@ class LoginScreen extends Component {
                      secureTextEntry={true}                   
                   
               />
+              <Image source={Images.close} style={styles.close}/>
             </Item>
             <Item regular style={styles.inputContainer}>
               <Text style={ApplicationStyles.screen.emailText}>PASSWORD</Text>
@@ -92,7 +134,7 @@ class LoginScreen extends Component {
               color: Colors.white,
               fontSize: Metrics.unitFontSize * 18,
             }}
-            onPress={()=>{}}
+            onPress={()=>{this.policyalert()}}
           />
           
         </View>

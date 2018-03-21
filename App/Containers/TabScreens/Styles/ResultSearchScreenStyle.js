@@ -345,8 +345,8 @@ export default StyleSheet.create({
     height: Metrics.unitMargin*13,
   },
   muscle: {
-    width:Metrics.unitMargin*12,
-    height:Metrics.unitMargin*12/90*67,
+    width:Metrics.unitMargin*40,
+    height:Metrics.unitMargin*40/1500*353,
   },
   titleText:{
     fontSize: Metrics.unitFontSize*30,

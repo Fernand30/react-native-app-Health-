@@ -24,20 +24,20 @@ export default StyleSheet.create({
   headerLeftView:{
     flex: 0.45
   },
-  modalCatetoryView:{ 
+  modalCatetoryView:{
     marginBottom:-Metrics.unitMargin*5,
-    height: Metrics.screenHeight/2, 
+    height: Metrics.screenHeight/2,
     marginRight: -Metrics.unitMargin*5,
-    width: Metrics.screenWidth, 
+    width: Metrics.screenWidth,
     backgroundColor:'white',
     borderTopRightRadius: 10,
     borderTopLeftRadius: 10,
   },
-  modalLengthView:{ 
+  modalLengthView:{
     marginBottom:-Metrics.unitMargin*5,
-    height: Metrics.screenHeight/2.4, 
+    height: Metrics.screenHeight/2.4,
     marginRight: -Metrics.unitMargin*5,
-    width: Metrics.screenWidth, 
+    width: Metrics.screenWidth,
     backgroundColor:'white',
     borderTopRightRadius: 10,
     borderTopLeftRadius: 10,
@@ -64,7 +64,7 @@ export default StyleSheet.create({
   account1:{
     width: Metrics.unitMargin*10,
     height: Metrics.unitMargin*10,
-    marginHorizontal: Metrics.unitMargin*3
+    marginHorizontal: Metrics.unitMargin*5
   },
   account:{
     width: Metrics.unitMargin*3,
@@ -124,7 +124,7 @@ export default StyleSheet.create({
     marginHorizontal: Metrics.unitMargin*5,
     justifyContent: 'space-between',
     alignItems:'center',
-    marginTop: Metrics.unitMargin*2 
+    marginTop: Metrics.unitMargin*2
   },
   rowView2:{
     flexDirection: 'row',
@@ -161,7 +161,7 @@ export default StyleSheet.create({
   },
   ddff:{
     width: Metrics.unitMargin*3,
-    height: Metrics.unitMargin*6 
+    height: Metrics.unitMargin*6
   },
   buildMuscle:{
     width: Metrics.unitMargin*4,
@@ -178,7 +178,7 @@ export default StyleSheet.create({
   },
   Boast:{
     width: Metrics.unitMargin*4,
-    height: Metrics.unitMargin*4 
+    height: Metrics.unitMargin*4
   },
   star:{
     width: Metrics.unitMargin*4,
@@ -224,7 +224,7 @@ export default StyleSheet.create({
     fontSize: Metrics.unitFontSize*16,
     marginLeft: Metrics.unitMargin*3,
     textAlign: 'center',
-    marginVertical: Metrics.unitMargin*2
+    marginVertical: Metrics.unitMargin*3
   },
   eachView:{
     alignItems:'center',
@@ -269,7 +269,7 @@ export default StyleSheet.create({
   },
   smallText:{
     fontSize: Metrics.unitFontSize*12,
-    marginLeft: Metrics.unitMargin*3
+    marginLeft: Metrics.unitMargin*5
   },
   minText:{
     fontSize: Metrics.unitFontSize*10,
@@ -279,17 +279,17 @@ export default StyleSheet.create({
   },
   smallText1:{
     fontSize: Metrics.unitFontSize*12,
-    marginLeft: Metrics.unitMargin*3,
+    marginLeft: Metrics.unitMargin*5,
     marginVertical: Metrics.unitMargin*3
   },
   tinyText:{
     fontSize: Metrics.unitFontSize*12,
     textAlign: 'center'
   },
-  modalView: { 
-    flex: 1, 
-    marginHorizontal: Metrics.unitMargin*2, 
-    marginVertical: Metrics.unitMargin*4, 
+  modalView: {
+    flex: 1,
+    marginHorizontal: Metrics.unitMargin*2,
+    marginVertical: Metrics.unitMargin*4,
     backgroundColor: 'white',
     borderRadius: 5,
     justifyContent: 'flex-end',
@@ -377,15 +377,15 @@ export default StyleSheet.create({
   },
   backArrow:{
     width: Metrics.unitMargin*3,
-    height: Metrics.unitMargin*3/13*22 
+    height: Metrics.unitMargin*3/13*22
   },
   menu:{
     width: Metrics.unitMargin*5,
-    height: Metrics.unitMargin*5/19*16  
+    height: Metrics.unitMargin*5/19*16
   },
   search:{
     width: Metrics.unitMargin*3,
-    height: Metrics.unitMargin*3 
+    height: Metrics.unitMargin*3
   },
   emailText:{
     fontSize: Metrics.unitFontSize*15,
@@ -468,7 +468,7 @@ export default StyleSheet.create({
   },
   muscle: {
     width:Metrics.unitMargin*12,
-    height:Metrics.unitMargin*12/90*67,
+    height:Metrics.unitMargin*12/777*661,
   },
   titleText:{
     fontSize: Metrics.unitFontSize*30,

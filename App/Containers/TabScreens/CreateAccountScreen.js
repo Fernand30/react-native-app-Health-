@@ -24,12 +24,20 @@ class LoginScreen extends Component {
     this.props.navigation.dispatch(CreateAccountWithFacebookScreen);
   }
 
-  createAccount(){
-    const AccountScreen = NavigationActions.navigate({
-      routeName: "AccountScreen",
+  handleLogin = () => {
+    const LoginScreen = NavigationActions.navigate({
+      routeName: "LoginScreen",
       params: {}
     });
-    this.props.navigation.dispatch(AccountScreen);
+    this.props.navigation.dispatch(LoginScreen);
+  }
+
+  createAccount(){
+    const LoginScreen = NavigationActions.navigate({
+      routeName: "LoginScreen",
+      params: {}
+    });
+    this.props.navigation.dispatch(LoginScreen);
   }
 
   goCancel(){
@@ -48,8 +56,7 @@ class LoginScreen extends Component {
               </TouchableOpacity>
             </View>
             <View style={styles.headerCenterView}>
-              <Image source={Images.muscle} style={styles.muscle}/>
-              <Text style={ApplicationStyles.screen.titleText}>Health App</Text>
+              <Image source={Images.logo} style={styles.muscle}/>
             </View>
             <View style={styles.headerRightView}>
 
@@ -131,7 +138,7 @@ class LoginScreen extends Component {
               fontSize: Metrics.unitFontSize * 15,
               fontWeight: '400'
             }}
-            onPress={()=>{this.CreateAccount()}}
+            onPress={this.handleLogin}
           />
         </View>
       </Container>

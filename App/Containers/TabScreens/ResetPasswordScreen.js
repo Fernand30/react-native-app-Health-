@@ -40,8 +40,7 @@ class LoginScreen extends Component {
               </TouchableOpacity>
             </View>
             <View style={styles.headerCenterView}>
-              <Image source={Images.muscle} style={styles.muscle}/>
-              <Text style={ApplicationStyles.screen.titleText}>Health App</Text>
+              <Image source={Images.logo} style={styles.muscle}/>
             </View>
             <View style={styles.headerRightView}>
 

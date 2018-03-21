@@ -13,7 +13,7 @@ export default class InputText extends Component {
                      style={[styles.input, this.props.style]}
                      textAlign={'left'}
                      fontSize={this.props.fontSize}
-                     placeholderTextColor={Colors.coal}                     
+                     placeholderTextColor={Colors.inputText}                     
                      returnKeyType='done'                
                      autoCapitalize='none'
                      autoCorrect={false}
@@ -21,6 +21,7 @@ export default class InputText extends Component {
                      secureTextEntry={this.props.secureTextEntry}                   
                      underlineColorAndroid='transparent'
                      onSubmitEditing={() => {}}
+                     onChangeText={(text) => {this.props.onChangeText(text)}}
               />
     )
   }

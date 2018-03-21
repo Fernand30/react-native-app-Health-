@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, Image, Text, SafeAreaView } from 'react-native'
+import { View, Image, Text, SafeAreaView,BackHandler } from 'react-native'
 import { connect } from 'react-redux'
 import { NavigationActions } from "react-navigation";
 import { Images, Colors, Metrics, ApplicationStyles } from '../Themes'
@@ -16,6 +16,26 @@ class LoginScreen extends Component {
     super(props)
   }
 
+  componentDidMount() {
+    that  = this
+    BackHandler.addEventListener('hardwareBackPress', function() {
+        that.goback();
+        return true;
+    });
+  }
+
+  componentWillUnmount() {
+    BackHandler.removeEventListener('hardwareBackPress', this.handleBackButton);
+  }
+
+  handleBackButton() {
+    return true;
+  }
+
+  goback = () => {
+    this.props.navigation.dispatch(NavigationActions.back());
+  };
+
   Resetpassword = () => {
     const ResetPasswordStack = NavigationActions.navigate({
       routeName: "ResetPasswordStack",
@@ -28,10 +48,17 @@ class LoginScreen extends Component {
     this.props.navigation.dispatch(NavigationActions.back());
   }
 
+  goTabNavigation(){
+    const TabNavigatorStack = NavigationActions.navigate({
+      routeName: "TabNavigatorStack",
+      params: {}
+    });
+    this.props.navigation.dispatch(TabNavigatorStack);
+  }
+
   render () {
     return (
     <SafeAreaView style={ApplicationStyles.screen.whiteContent}> 
-      <Container>
         <View style={styles.contentStyle}>
           <View style={styles.headerView}>
             <View style={styles.headerLeftView}>
@@ -99,11 +126,10 @@ class LoginScreen extends Component {
               color: Colors.white,
               fontSize: Metrics.unitFontSize * 18,
             }}
-            onPress={()=>{}}
+            onPress={()=>this.goTabNavigation()}
           />
           
         </View>
-      </Container>
      </SafeAreaView>  
     )
   }
