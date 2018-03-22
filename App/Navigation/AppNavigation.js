@@ -33,6 +33,7 @@ import SessionDashboardScreen from "../Containers/TabScreens/SessionDashboardScr
 import ProgramIntroductionScreen from "../Containers/TabScreens/ProgramIntroductionScreen";
 import BillingDetailScreen from "../Containers/TabScreens/BillingDetailScreen";
 import BankDetailScreen from "../Containers/TabScreens/BankDetailScreen";
+import TransactionsScreen from "../Containers/TabScreens/TransactionsScreen";
 
 import AlarmScreen from "../Containers/TabScreens/AlarmScreen";
 
@@ -123,6 +124,9 @@ const AccountTab = StackNavigator({
   },
   BankDetailScreen: {
     screen: BankDetailScreen
+  },
+  TransactionsScreen: {
+    screen: TransactionsScreen
   }
 })
 

@@ -78,8 +78,7 @@ class WelcomeScreen extends Component {
               <Text style={styles.category}>Default Payment Method</Text>
               <Switch value = {this.state.value} onValueChange={(value)=>{this.setState({value:value})}} style={{ transform: [{ scaleX: .7 }, { scaleY: .7 }] }}/>
             </View>
-            <Text style={styles.explain1}>Make this your default payment method that Fry Egg will use to dispurse your funds.
-            </Text>                           
+            <Text style={styles.explain1}>Make this your default payment method that Fry Egg will use to dispurse your funds.</Text>                           
             <TouchableOpacity style={[styles.button,{backgroundColor: '#12C652'}]}>
               <Text style={styles.buttonText}>Update Payment Method</Text>
             </TouchableOpacity>

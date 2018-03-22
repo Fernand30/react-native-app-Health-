@@ -143,6 +143,14 @@ class WelcomeScreen extends Component {
     this.props.navigation.dispatch(billingdetail);
   }
 
+  transactions(){
+    const transactions = NavigationActions.navigate({
+      routeName: "TransactionsScreen",
+      params: {}
+    });
+    this.props.navigation.dispatch(transactions);
+  }
+
   render () {
     return (
       <SafeAreaView style={ApplicationStyles.screen.yellowContent}> 
@@ -231,13 +239,13 @@ class WelcomeScreen extends Component {
             <Text style={styles.policyText}>Log Out</Text>
             <Image source={Images.Arrow} style={styles.arrow}/>
           </View>
-          <View style={styles.policyView1}>
+          <TouchableOpacity onPress={this.transactions.bind(this)} style={styles.policyView1}>
             <View style={styles.circleView}>
              <Text style={styles.itext}>i</Text>
             </View>
             <Text style={styles.policyText}>Transactions</Text>
             <Image source={Images.Arrow} style={styles.arrow}/>
-          </View>
+          </TouchableOpacity>
         </View>
       </Container>
       </SafeAreaView>
