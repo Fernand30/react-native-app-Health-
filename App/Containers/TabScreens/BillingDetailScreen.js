@@ -34,6 +34,22 @@ class WelcomeScreen extends Component {
     this.props.navigation.dispatch(billingdetail);
   }
 
+  support(){
+    const support = NavigationActions.navigate({
+      routeName: "SupportScreen",
+      params: {}
+    });
+    this.props.navigation.dispatch(support);
+  }
+
+  filelocker(){
+    const filelocker = NavigationActions.navigate({
+      routeName: "FileLockerScreen",
+      params: {}
+    });
+    this.props.navigation.dispatch(filelocker);
+  }
+
   render () {
     
     return (
@@ -55,7 +71,7 @@ class WelcomeScreen extends Component {
               </TouchableOpacity>
             </View>
           </View>
-          <ScrollView style={styles.mainView}>
+          <ScrollView style={styles.mainView} showsVerticalScrollIndicator={false}>
             <View style={styles.categoryView}>
               <Text style={styles.category}>COACH EARNINGS</Text>
             </View>
@@ -122,7 +138,7 @@ class WelcomeScreen extends Component {
               </View> 
               <Image source={Images.Arrow} style={styles.arrow}/>
             </TouchableOpacity>
-            <View style={styles.itemView1}>
+            <TouchableOpacity onPress={this.support.bind(this)}  style={styles.itemView1}>
               <View style={styles.rowView}>
                 <View style={styles.imageView}>
                   <Image source={Images.paypal} style={styles.paypal}/>
@@ -138,8 +154,8 @@ class WelcomeScreen extends Component {
                 </View>
               </View> 
               <Image source={Images.Arrow} style={styles.arrow}/>
-            </View>
-            <View style={styles.itemView1}>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={this.filelocker.bind(this)}   style={styles.itemView1}>
               <View style={styles.rowView}>
                 <View style={styles.imageView}>
                   <Image source={Images.personal} style={styles.personal}/>
@@ -156,7 +172,7 @@ class WelcomeScreen extends Component {
                 </View>
               </View> 
               <Image source={Images.Arrow} style={styles.arrow}/>
-            </View>
+            </TouchableOpacity>
             <View style={styles.itemView1}>
               <View style={styles.rowView}>
                 <View style={styles.imageView}>

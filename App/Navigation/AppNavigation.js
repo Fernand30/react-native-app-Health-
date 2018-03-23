@@ -3,6 +3,7 @@ import WelcomeScreen from '../Containers/WelcomeScreen'
 import LoginScreen from '../Containers/LoginScreen'
 import CreateAccountScreen from '../Containers/CreateAccountScreen'
 import ResetPasswordScreen from '../Containers/ResetPasswordScreen'
+import ViewCoachScreen from '../Containers/ViewCoachScreen'
 import AuthenticationScreen from '../Containers/AuthenticationScreen'
 import TabNavigatorScreen from '../Containers/TabNavigatorScreen'
 import ViewProgramScreen from '../Containers/ViewProgramScreen'
@@ -34,6 +35,8 @@ import ProgramIntroductionScreen from "../Containers/TabScreens/ProgramIntroduct
 import BillingDetailScreen from "../Containers/TabScreens/BillingDetailScreen";
 import BankDetailScreen from "../Containers/TabScreens/BankDetailScreen";
 import TransactionsScreen from "../Containers/TabScreens/TransactionsScreen";
+import SupportScreen from "../Containers/TabScreens/SupportScreen";
+import FileLockerScreen from "../Containers/TabScreens/FileLockerScreen";
 
 import AlarmScreen from "../Containers/TabScreens/AlarmScreen";
 
@@ -127,6 +130,12 @@ const AccountTab = StackNavigator({
   },
   TransactionsScreen: {
     screen: TransactionsScreen
+  },
+  SupportScreen: {
+    screen: SupportScreen
+  },
+  FileLockerScreen: {
+    screen: FileLockerScreen
   }
 })
 
@@ -232,6 +241,7 @@ const PrimaryNav = StackNavigator({
   LoginStack: { screen: LoginScreen },
   CreateAccountStack: { screen: CreateAccountScreen },
   ResetPasswordStack: { screen: ResetPasswordScreen },
+  ViewCoachStack: { screen: ViewCoachScreen },
   AuthenticationStack: { screen: AuthenticationScreen },
   TabNavigatorStack: { screen: TabNavigatorStack },
   ViewProgramStack: { screen: ViewProgramScreen },

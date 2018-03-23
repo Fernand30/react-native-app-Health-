@@ -151,6 +151,14 @@ class WelcomeScreen extends Component {
     this.props.navigation.dispatch(transactions);
   }
 
+  viewcoach(){
+    const viewcoach = NavigationActions.navigate({
+      routeName: "ViewCoachStack",
+      params: {}
+    });
+    this.props.navigation.dispatch(viewcoach);
+  }
+
   render () {
     return (
       <SafeAreaView style={ApplicationStyles.screen.yellowContent}> 
@@ -183,13 +191,13 @@ class WelcomeScreen extends Component {
             <Text style={styles.policyText}>Settings</Text>
             <Image source={Images.Arrow} style={styles.arrow}/>
           </TouchableOpacity>
-          <View style={styles.policyView1}>
+          <TouchableOpacity onPress={this.viewcoach.bind(this)} style={styles.policyView1}>
             <View style={styles.circleView}>
              <Text style={styles.itext}>i</Text>
             </View>
             <Text style={styles.policyText}>Inbox</Text>
             <Image source={Images.Arrow} style={styles.arrow}/>
-          </View>
+          </TouchableOpacity>
           <TouchableOpacity  onPress={this.myprogram.bind(this)} style={styles.policyView1}>
             <View style={styles.circleView}>
              <Text style={styles.itext}>i</Text>

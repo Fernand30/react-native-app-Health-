@@ -73,6 +73,7 @@ const images = {
   payment: require('../Images/payment.png'),
   paypal: require('../Images/paypal.png'),
   personal: require('../Images/personal.png'),
+  action: require('../Images/action.png'),
 }
 
 export default images
