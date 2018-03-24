@@ -5,7 +5,7 @@ export default StyleSheet.create({
   ...ApplicationStyles.screen,
   contentStyle: {
     flex: 1,
-    backgroundColor: Colors.background1
+    backgroundColor: Colors.background
   },
   inputContainer: {
     backgroundColor: Colors.snow,
@@ -18,7 +18,7 @@ export default StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    backgroundColor: 'white',
+    backgroundColor: Colors.background,
     height: Metrics.unitMargin*10,
     alignItems: 'center',
     borderBottomWidth: 1,
@@ -61,6 +61,19 @@ export default StyleSheet.create({
   action:{
     width: Metrics.unitMargin*5,
     height: Metrics.unitMargin*5
+  },
+  mainView:{
+    flex:1,
+  },
+  footerContainer: {
+    marginTop: 5,
+    marginLeft: 10,
+    marginRight: 10,
+    marginBottom: 10,
+  },
+  footerText: {
+    fontSize: 14,
+    color: '#aaa',
   },
   about:{
     fontSize: Metrics.unitFontSize*16,

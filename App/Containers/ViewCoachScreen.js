@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, Image, Text, SafeAreaView,BackHandler, TouchableOpacity, ImageBackground } from 'react-native'
+import { View, Image, Text, SafeAreaView,BackHandler,FlatList, TouchableOpacity, ImageBackground, ScrollView } from 'react-native'
 import { connect } from 'react-redux'
 import { NavigationActions } from "react-navigation";
 import { Images, Colors, Metrics, ApplicationStyles } from '../Themes'
@@ -9,7 +9,7 @@ import FullButton from '../Components/FullButton'
 import InputText from '../Components/InputText'
 
 import styles from './Styles/ViewCoachScreenStyle'
-
+const data=[1,2]
 class LoginScreen extends Component {
 
   constructor (props) {
@@ -40,6 +40,54 @@ class LoginScreen extends Component {
     this.props.navigation.dispatch(NavigationActions.back());
   }
 
+  _renderItem({item}){
+    return(
+      <View>
+        <View>
+          <Image source={Images.renderImage2} style={styles.renderImage1}/>
+          <View style={styles.absoluteleft}>
+            <Image source={Images.account} style={styles.account}/>
+            <Text style={{fontSize: Metrics.unitFontSize*15}}>10</Text>
+          </View>
+          <View style={styles.absoluteright}>
+            <Image source={Images.heart} style={styles.heart}/>
+          </View>
+        </View> 
+        <Text style={styles.commonText}>Julian Anderson's 30 Day Ultimate Spartan Shredder For{'\n'}Sports and Recreation</Text>
+        <View style={styles.rowView1}>
+          <View style={styles.yellowRowView}>
+            <Image source={Images.buildMuscle} style={styles.buildMuscle}/>
+            <Text style={styles.text}>Build{'\n'}Muscie</Text>
+          </View>
+
+          <View style={styles.yellowRowView}>
+            <Image source={Images.increaseFocus} style={styles.increaseFocus}/>
+            <Text style={styles.text}>Increase{'\n'}Focus</Text>
+          </View>
+
+          <View style={styles.yellowRowView}>
+            <Image source={Images.Boast} style={styles.Boast}/>
+            <Text style={styles.text}>Boast{'\n'}TestOsterOne</Text>
+          </View>
+        </View>
+        <Text style={styles.smallText}>Julian Anderson's 30 Day Ultimate Spartan Shredder For Sports andsdf sdffas{'\n'}Recreation is and amazing program that can get you the results that sdfs dfsdf</Text>
+        <View style={styles.priceView}>
+          <View style={styles.smallView}>
+            <Image source={Images.chaudt} style={styles.chaudt1}/>
+            <View style={styles.nameView}>
+              <Text style={styles.nametext1}>Michael Creation</Text>
+              <View style={styles.smallView}>
+                <Image source={Images.fivestars} style={styles.fivestar}/>
+                <Text style={styles.nametext}>(12)</Text>
+              </View>
+            </View>
+          </View>
+          <Text style={styles.greeenText}>$129</Text>
+        </View>
+      </View>
+      )
+  }
+
   render () {
     return (
       <SafeAreaView style={ApplicationStyles.screen.whiteContent}> 
@@ -61,7 +109,7 @@ class LoginScreen extends Component {
               </TouchableOpacity>
             </View>
           </View>
-          <View style={styles.mainView}>
+          <ScrollView showsVerticalScrollIndicator={false} style={styles.mainView}>
             <ImageBackground source={Images.renderImage1} style={styles.backImage}>
               <View style={{flex:1, backgroundColor: 'black', opacity:0.5,overflow: 'visible'}}/>
               <View style={styles.positionView}>
@@ -111,14 +159,44 @@ class LoginScreen extends Component {
               </View>
             </View>
             <Text style={styles.about}>About Coach Mark Romani</Text>
-            <View style={styles.bar}/>
             <View style={styles.textView}>
-              <Text style={styles.text}>About Coach Mark Romani</Text>
+              <View style={styles.explain}>
+                <Text style={styles.explaintext}>
+                  Julian Anderson’s 30 Day Ultimate Spartan Shredder For Sports andsdf 
+                  sdffds Recreation is an amazing program that can get you the results 
+                  that sdfs dfsdf  you always dreamed about for your body start tsdffsd 
+                  fsdaf sadf fsd! Julian Anderson’s 30 Day Ultimate Spartan Shredder For 
+                  Sports andsdf  sdffds Recreation is an amazing program that can get 
+                  you the results that sdfs dfsdf  you always dreamed about for your 
+                  body start tsdffsd fsdaf sadf fsd! you always dreamed about for your 
+                  body start tsdffsd fsdaf sadf fsd! Julian Anderson’s 30 Day Ultimate 
+                  Spartan Shredder For Sports andsdf  sdffds Recreation is an amazing 
+                  program that can get you the results that sdfs dfsdf  you always
+                  dreamed about for your body start tsdffsd fsdaf sadf fsd! 
+                </Text> 
+                <TouchableOpacity style={styles.centerrow}>
+                  <Text>View More</Text>
+                  <Image source={Images.dropdown}/>
+                </TouchableOpacity> 
+              </View> 
             </View>
-            
-
-
-          </View>
+            <Text style={styles.about}>Programs Created By Mike</Text>
+            <View style={styles.textView1}>
+              <View style={styles.bar}/>
+              <FlatList
+                showsVerticalScrollIndicator={false}
+                data={data}
+                keyExtractor={(item, index) => index}
+                renderItem={this._renderItem}
+              />             
+            </View>
+            <TouchableOpacity style={styles.button}>
+              <View style={styles.smallView}>
+                <Image source={Images.sendarrow} style={styles.send}/>
+                <Text style={styles.sendtext}>Send Message</Text>
+              </View>
+            </TouchableOpacity>
+          </ScrollView>
         </View>
       </Container>
       </SafeAreaView>

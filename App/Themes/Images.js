@@ -1,6 +1,7 @@
 // leave off @2x/@3x
 const images = {
   Alert: require('../Images/Alert.png'),
+  selectAlert: require('../Images/selectAlert.png'),
   BackArrow: require('../Images/BackArrow.png'),
   Contacts: require('../Images/Contacts.png'),
   ddff: require('../Images/ddff.png'),
@@ -74,6 +75,21 @@ const images = {
   paypal: require('../Images/paypal.png'),
   personal: require('../Images/personal.png'),
   action: require('../Images/action.png'),
+  sendarrow: require('../Images/sendarrow.png'),
+  arong: require('../Images/arong.png'),
+  become: require('../Images/become.png'),
+  body: require('../Images/body.png'),
+  paid: require('../Images/paid.png'),
+  bonga: require('../Images/bonga.png'),
+  box: require('../Images/box.png'),
+  nome: require('../Images/nome.png'),
+  nono: require('../Images/nono.png'),
+  play: require('../Images/play.png'),
+  selectwait: require('../Images/selectwait.png'),
+  wait: require('../Images/wait.png'),
+  me: require('../Images/me.png'),
+  mail: require('../Images/mail.png'),
+  noalarm: require('../Images/noalarm.png'),
 }
 
 export default images
