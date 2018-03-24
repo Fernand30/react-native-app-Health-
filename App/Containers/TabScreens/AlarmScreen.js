@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, Image, Text, SafeAreaView, TouchableOpacity } from 'react-native'
+import { View, Image, Text, TouchableOpacity, SafeAreaView ,ScrollView, TextInput} from 'react-native'
 import { connect } from 'react-redux'
 import { NavigationActions } from "react-navigation";
 import { Images, Colors, Metrics, ApplicationStyles } from '../../Themes'
@@ -9,82 +9,184 @@ import FullButton from '../../Components/FullButton'
 import InputText from '../../Components/InputText'
 // Add Actions - replace 'Your' with whatever your reducer is called :)
 // import YourActions from '../Redux/YourRedux'
+import  Rating from 'react-native-easy-rating'
+
 
 // Styles
-import styles from './Styles/WelcomeScreenStyle'
-
-type WelcomeScreenProps = {
-  dispatch: () => any,
-  fetching: boolean,
-  attemptLogin: () => void,
-  passcode: number,
-  error: string
-}
-
+import styles from './Styles/AlarmScreenStyle'
 class WelcomeScreen extends Component {
   static navigationOptions = { header: null };
-  props: WelcomeScreenProps
-
-  state: {
-    passcode: number,
-    loading: boolean,
-    error: string,
-    editable: boolean
-  }
-
-  isAttempting: boolean
 
   constructor (props: WelcomeScreenProps) {
-
     super(props)
-
-    this.state = {
-      passcode : '',
-      loading: false,
-      error: '',
-      editable: true
-    },
-
-    this.isAttempting = false
-
+    this.state=({
+      Notifications: true
+    })
   }
 
-  // static navigationOptions = ({navigation}) => ({
-  //   header: false,
-  //   headerStyle: {visible: false}
-  // })
-
-  componentWillReceiveProps(nextProps) {
-    this.forceUpdate();
-
-    if(this.isAttempting && !nextProps.fetching){
-      if(!nextProps.error){
-        this.props.navigation.navigate('TeamScreen');
-      }else{
-        this.setState({ loading: false, passcode: '', editable: true}, () => {
-          Toast.show({
-            text: nextProps.error,
-            position: 'bottom',
-            buttonText: 'Okay',
-            type: 'warning',
-            duration: 5000
-          })
-        })
-      }
-    }
+  goCancel(){
+    this.props.navigation.dispatch(NavigationActions.back());
   }
 
-  handleChangePasscode = value => this.setState({ passcode: value });
+  Notifications(){
+    this.setState({
+      Notifications: true
+    })
+  }
+
+  Messages(){
+    this.setState({
+      Notifications: false
+    })
+  }
+
+  chat(){
+    const chat = NavigationActions.navigate({
+      routeName: "ChatStack",
+      params: {}
+    });
+    this.props.navigation.dispatch(chat);
+  }
 
   render () {
+    if(this.state.Notifications){
+      noColor = '#E03247'
+      meColor = '#CCCCCC'
+      noImage = Images.bonga
+      nostyle = styles.bonga
+      meImage = Images.me
+      mestyle = styles.me
+    }else{
+      noColor = '#CCCCCC'
+      meColor = '#E03247'
+      noImage = Images.noalarm
+      nostyle = styles.noalarm
+      meImage = Images.mail
+      mestyle = styles.mail
+    }
+    notification = 
+            <View>
+              <View style={styles.rowView}>
+                <Image source={Images.play} style={styles.play}/>
+                <View>
+                  <Text style={styles.text}>Your coach is waiting for you to finish your intro sfds</Text>
+                  <Text style={styles.date}>Oct 4. 2017</Text>
+                </View>
+                <Image source={Images.Arrow} style={styles.arrow}/>
+              </View>
+              <View style={styles.rowView1}>
+                <Image source={Images.wait} style={styles.play}/>
+                <View>
+                  <Text style={[styles.text,{color: '#C7C7CC'}]}>Your coach is waiting for you to finish your intro sfds</Text>
+                  <Text style={[styles.date,{color:'#C7C7CC'}]}>Oct 4. 2017</Text>
+                </View>
+                <Image source={Images.Arrow} style={styles.arrow}/>
+              </View>
+              <View style={styles.rowView}>
+                <Image source={Images.box} style={styles.play}/>
+                <View>
+                  <Text style={styles.text}>Your coach is waiting for you to finish your intro sfds</Text>
+                  <Text style={styles.date}>Oct 4. 2017</Text>
+                </View>
+                <Image source={Images.Arrow} style={styles.arrow}/>
+              </View>
+              <View style={styles.rowView}>
+                <Image source={Images.play} style={styles.play}/>
+                <View>
+                  <Text style={styles.text}>Your coach is waiting for you to finish your intro sfds</Text>
+                  <Text style={styles.date}>Oct 4. 2017</Text>
+                </View>
+                <Image source={Images.Arrow} style={styles.arrow}/>
+              </View>
+              <View style={styles.rowView}>
+                <Image source={Images.play} style={styles.play}/>
+                <View>
+                  <Text style={styles.text}>Your coach is waiting for you to finish your intro sfds</Text>
+                  <Text style={styles.date}>Oct 4. 2017</Text>
+                </View>
+                <Image source={Images.Arrow} style={styles.arrow}/>
+              </View>
+              <View style={styles.rowView}>
+                <Image source={Images.selectwait} style={styles.play}/>
+                <View>
+                  <Text style={styles.text}>Your coach is waiting for you to finish your intro sfds</Text>
+                  <Text style={styles.date}>Oct 4. 2017</Text>
+                </View>
+                <Image source={Images.Arrow} style={styles.arrow}/>
+              </View>
+              <View style={styles.rowView}>
+                <Image source={Images.box} style={styles.play}/>
+                <View>
+                  <Text style={styles.text}>Your coach is waiting for you to finish your intro sfds</Text>
+                  <Text style={styles.date}>Oct 4. 2017</Text>
+                </View>
+                <Image source={Images.Arrow} style={styles.arrow}/>
+              </View>
+              <View style={styles.rowView}>
+                <Image source={Images.play} style={styles.play}/>
+                <View>
+                  <Text style={styles.text}>Your coach is waiting for you to finish your intro sfds</Text>
+                  <Text style={styles.date}>Oct 4. 2017</Text>
+                </View>
+                <Image source={Images.Arrow} style={styles.arrow}/>
+              </View>
+            </View>
+    message = 
+          <View>
+            <TouchableOpacity onPress={this.chat.bind(this)} style={styles.rowView}>
+              <Image source={Images.chaudt} style={styles.chaudt}/>
+              <View>
+                <Text style={styles.conversation}>Connversation with Tristan 766</Text>
+                <Text style={styles.date}>Hey james, when you get the chance, please let me kn0w…</Text>
+                <Text style={styles.date}>Oct 4, 2017</Text>
+              </View>
+              <Image source={Images.Arrow} style={styles.arrow}/>
+            </TouchableOpacity>
+            <View style={styles.rowView1}>
+              <Image source={Images.chaudt} style={styles.chaudt}/>
+              <View>
+                <Text style={styles.conversation}>Connversation with Tristan 766</Text>
+                <Text style={styles.date}>Hey james, when you get the chance, please let me kn0w…</Text>
+                <Text style={styles.date}>Oct 4, 2017</Text>
+              </View>
+              <Image source={Images.Arrow} style={styles.arrow}/>
+            </View>
+          </View>  
     return (
       <SafeAreaView style={ApplicationStyles.screen.yellowContent}> 
       <Container>
         <View style={styles.contentStyle}>
-           
-        </View>
+          <View style={styles.headerView}>
+            <View style={styles.headerLeftView}>
+              
+            </View>
+            <View style={styles.headerCenterView}>
+              <Text style={styles.titleText}>Notifications</Text>
+            </View>
+            <View style={styles.headerRightView}>
+              
+            </View>
+          </View>
+          <View style={styles.mainView}>
+            <View style={styles.tabView}>
+              <View style={styles.eachtab1}>
+                <TouchableOpacity onPress={this.Notifications.bind(this)} style={styles.tabbutton}>
+                  <Image source={noImage} style={nostyle}/>
+                  <Text style={[styles.tabtext,{color:noColor}]}>My Notifications</Text>
+                </TouchableOpacity>
+              </View>
+              <View style={styles.eachtab}>
+                <TouchableOpacity onPress={this.Messages.bind(this)} style={styles.tabbutton}>
+                  <Image source={meImage} style={mestyle}/>
+                  <Text style={[styles.tabtext,{color: meColor}]}>My Messages</Text>
+                </TouchableOpacity>
+              </View>
+            </View>
+            {(this.state.Notifications)? notification: message}
+          </View>
+        </View>  
       </Container>
-      </SafeAreaView> 
+      </SafeAreaView>
     )
   }
 }

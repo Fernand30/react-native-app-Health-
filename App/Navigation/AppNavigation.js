@@ -4,6 +4,7 @@ import LoginScreen from '../Containers/LoginScreen'
 import CreateAccountScreen from '../Containers/CreateAccountScreen'
 import ResetPasswordScreen from '../Containers/ResetPasswordScreen'
 import ViewCoachScreen from '../Containers/ViewCoachScreen'
+import ChatScreen from '../Containers/ChatScreen'
 import AuthenticationScreen from '../Containers/AuthenticationScreen'
 import TabNavigatorScreen from '../Containers/TabNavigatorScreen'
 import ViewProgramScreen from '../Containers/ViewProgramScreen'
@@ -37,6 +38,7 @@ import BankDetailScreen from "../Containers/TabScreens/BankDetailScreen";
 import TransactionsScreen from "../Containers/TabScreens/TransactionsScreen";
 import SupportScreen from "../Containers/TabScreens/SupportScreen";
 import FileLockerScreen from "../Containers/TabScreens/FileLockerScreen";
+import BecomeCoachScreen from "../Containers/TabScreens/BecomeCoachScreen";
 
 import AlarmScreen from "../Containers/TabScreens/AlarmScreen";
 
@@ -136,6 +138,9 @@ const AccountTab = StackNavigator({
   },
   FileLockerScreen: {
     screen: FileLockerScreen
+  },
+  BecomeCoachScreen: {
+    screen: BecomeCoachScreen
   }
 })
 
@@ -178,7 +183,7 @@ const TabNavigatorStack = TabNavigator({
                 title: 'Alarm',
                 tabBarIcon: ({ focused }) => {
                       const image = focused 
-                      ? Images.Alert 
+                      ? Images.selectAlert 
                       : Images.Alert 
                       return (
                           <Image 
@@ -242,6 +247,7 @@ const PrimaryNav = StackNavigator({
   CreateAccountStack: { screen: CreateAccountScreen },
   ResetPasswordStack: { screen: ResetPasswordScreen },
   ViewCoachStack: { screen: ViewCoachScreen },
+  ChatStack: { screen: ChatScreen },
   AuthenticationStack: { screen: AuthenticationScreen },
   TabNavigatorStack: { screen: TabNavigatorStack },
   ViewProgramStack: { screen: ViewProgramScreen },

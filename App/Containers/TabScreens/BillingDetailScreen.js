@@ -50,6 +50,14 @@ class WelcomeScreen extends Component {
     this.props.navigation.dispatch(filelocker);
   }
 
+  becomecoach(){
+    const becomecoach = NavigationActions.navigate({
+      routeName: "BecomeCoachScreen",
+      params: {}
+    });
+    this.props.navigation.dispatch(becomecoach);
+  }
+
   render () {
     
     return (
@@ -173,7 +181,7 @@ class WelcomeScreen extends Component {
               </View> 
               <Image source={Images.Arrow} style={styles.arrow}/>
             </TouchableOpacity>
-            <View style={styles.itemView1}>
+            <TouchableOpacity onPress={this.becomecoach.bind(this)} style={styles.itemView1}>
               <View style={styles.rowView}>
                 <View style={styles.imageView}>
                   <Image source={Images.payment} style={styles.payment}/>
@@ -189,7 +197,7 @@ class WelcomeScreen extends Component {
                 </View>
               </View> 
               <Image source={Images.Arrow} style={styles.arrow}/>
-            </View>
+            </TouchableOpacity>
             <View style={styles.itemView1}>
               <View style={styles.rowView}>
                 <View style={styles.imageView}>
