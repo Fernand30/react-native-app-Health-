@@ -1,4 +1,8 @@
+
 {
-  "name": "healthapp",
-  "displayName": "healthapp"
+	"expo": {
+	  "name": "healthapp",
+	  "slug": "healthapp",
+	  "sdkVersion": "25.0.0",
+	}
 }
